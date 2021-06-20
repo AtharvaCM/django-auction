@@ -1,6 +1,6 @@
 <html lang="en">
     
-<head>
+<head>  
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,19 +13,23 @@
     <body class="d-flex flex-column min-vh-100">
        
         <nav class="navbar navbar-expand-sm navbar-fixed-top bg-dark navbar-dark justify-content-between">
+          <form class="form-inline ml-auto my-auto ">
+            <input class="form-control mr-auto " type="text" placeholder="Search" >
+            <button class="btn btn-success" type="submit">Search</button>
+          </form>
 
-            <a class="navbar-brand mr-auto" href="#">
-                <img src="auction.jpeg" alt="logo" style="width:40px;"> E - AUCTION
-            </a>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-                <form class="form-inline ml-auto my-auto ">
-                    <input class="form-control mr-sm-1 " type="text" placeholder="Search" >
-                    <button class="btn btn-success" type="submit">Search</button>
-                </form>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-auto">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <a class="navbar-brand ml-auto" href="#">
+                <img src="auction.jpeg" alt="logo" style="width:40px; margin-right:10%;"> E - AUCTION
+              </a>
+    
+                <ul class="navbar-nav mb-2 mb-lg-0 ml-auto">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">HOME</a>
                   </li>
@@ -33,7 +37,7 @@
                     <a class="nav-link active" aria-current="page" href="#">ABOUT</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">SIGN UP</a>
+                    <a class="nav-link active" aria-current="page" href="./signup.html">SIGN UP</a>
                   </li>
                 </ul>
             </div>  
