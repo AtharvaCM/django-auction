@@ -1,5 +1,25 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
-<h1>index page</h1>
+<!-- <h1>index page</h1> -->
+
+<div class="container" style="overflow: hidden;">
+    <div class="row">
+        <div class="col-6">
+            <h2 id="title">Active Listings </h2>
+        </div>
+        <div class="col-6">
+            <form class="float-right" action="{% url 'display_category' %}" method="post">
+                {% csrf_token %}
+                <select name="category" class="form-select btn btn-outline-dark" aria-label="Default select example">
+                    <option selected><a href="#">All Categories</a></option>
+                    {% for catagory in listings%}
+                    <option value="{{ catagory }}">{{ catagory }}</option>
+                    {% endfor %}
+                </select>
+                <input class="btn btn-outline-dark" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
