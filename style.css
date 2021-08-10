@@ -3,9 +3,20 @@
   --input-padding-y: 0.75rem;
 }
 
+.custom-navbar{
+  background-image: linear-gradient(to bottom right, rgb(21, 20, 20) 40%, rgb(101, 100, 100));
+  height: 100px;
+}
+
+.custom-navbar-title{
+  padding-top: 10px;
+  color: white;
+  font-size: x-large;
+}
+
 .card-signin {
   border: 0;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
@@ -13,7 +24,7 @@
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: x-large;
 }
 
 .card-signin .card-img-left {
@@ -118,4 +129,21 @@ input.empty {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
+  background-color: transparent;  
+  color:white;
 }
+input.empty::placeholder {
+  color: rgb(231, 227, 218);
+  opacity: 1; /* Firefox */
+}
+input.empty:focus{
+  background-color: transparent;
+  color: wheat;
+}
+
+.custom-footer{
+  background-image: linear-gradient(to bottom right, rgb(21, 20, 20) 40%, rgb(101, 100, 100));
+  height: 70px;
+  padding-bottom: 1px;
+}
+
