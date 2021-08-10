@@ -1,9 +1,10 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
-<!-- <h1>index page</h1> -->
+<h1>index page</h1>
+<a href="{% url 'display_category' %}">View Listings</a>
 
-<div class="container" style="overflow: hidden;">
+<!-- <div class="container" style="overflow: hidden;">
     <div class="row">
         <div class="col-6">
             <h2 id="title">Active Listings </h2>
@@ -21,5 +22,5 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 {% endblock %}

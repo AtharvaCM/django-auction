@@ -22,13 +22,14 @@
 
     <nav class="navbar navbar-expand-sm navbar-fixed-top bg-dark navbar-dark justify-content-between">
 
-        <a class="navbar-brand mr-auto" href="#">
+        <a class="navbar-brand mr-auto" href="{% url 'index' %}">
             <img src="{% static 'auctions/img/auction.jpeg' %}" alt="logo" style="width:40px;"> E - AUCTION
         </a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-            <form class="form-inline ml-auto my-auto ">
+            <form class="form-inline ml-auto my-auto" action="#" method="POST">
+                {% csrf_token %}
                 <input class="form-control mr-sm-1 " type="text" placeholder="Search">
                 <button class="btn btn-success" type="submit">Search</button>
             </form>
