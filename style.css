@@ -4,14 +4,14 @@
 }
 
 .custom-navbar{
-  color: rgb(74, 74, 197);
-  /* background-image: linear-gradient(to bottom right, rgb(21, 20, 20) 40%, rgb(101, 100, 100)); */
+  color: white;
+  background-image: linear-gradient(to bottom right, rgb(21, 20, 20) 40%, rgb(101, 100, 100));
   height: 100px;
 }
 
 .custom-navbar-title{
   padding-top: 10px;
-  color: rgb(74, 74, 197);
+  color: white;
   font-size: x-large;
 }
 
