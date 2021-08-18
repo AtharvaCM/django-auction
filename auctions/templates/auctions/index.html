@@ -1,8 +1,62 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
-<h1>index page</h1>
-<a href="{% url 'display_category' %}">View Listings</a>
+<!-- <h1>index page</h1> -->
+<!-- <a href="{% url 'display_category' %}">View Listings</a> -->
+
+<section id="hero-section">
+    <div class="description" style=" margin-top: 40px;">
+        <div class="text-center">
+            <i
+                style=" font-size: 35px; background: linear-gradient(to right, rgb(117, 116, 116) 20%, rgb(11,11,11)); background-clip:text; -webkit-text-fill-color: transparent; font-weight: 1900;">
+                <strong> WELCOME TO eAUCTION PUNE</strong></i>
+        </div>
+
+        <p style="margin: 15px; word-spacing: 2px; line-height: 50px; font-size: 30px;">A Platform to Buy in and Sell
+            Out
+
+            eAuction Pune is a platform for Government Departments to conduct online auctions for sale and purchase.
+            It removes all barriers of geography, presence, time, space, and a small target audience.
+            Propelled by a versatile, safe and secured engine developed by National Informatics Centre, many users have
+            witnessed multi fold increase in revenue in auctions conducted over a diverse range.
+        </p>
+    </div>
+</section>
+
+<section id="active-listing-sec mt-5" style="background:rgb(117, 116, 116)">
+    <div class="text-center">
+        <i
+            style=" font-size: 35px; background: linear-gradient(to right, rgb(117, 116, 116) 20%, rgb(11,11,11)); background-clip:text; -webkit-text-fill-color: transparent; font-weight: 1900;">
+            <strong> ONGOING AUCTIONS ...</strong></i>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            {% for listing in listings %}
+            <div class="col-sm-4 mb-5">
+                <div class="card">
+                    <img class="card-img-top" src="{{listing.url}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><u>{{lisitng.title}}</u></h5>
+                        <p class="card-text">{{listing.description}}</p>
+                        <a href="{% url 'display_listing' listing.pk %}" class="btn btn-primary">Go to Active
+                            Listing</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div id="header" style="position: relative;">
+                <div id="header-content"
+                    style="position: absolute; bottom: 0; left: 0; width: 100px; margin-bottom: 40px; ">
+                    <!-- border-style: solid; border-color: red; border-width: 1px; -->
+                    <a href="{% url 'display_category' %}" style="color: brown;">View all Auctions...</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
 
 <!-- <div class="container" style="overflow: hidden;">
     <div class="row">

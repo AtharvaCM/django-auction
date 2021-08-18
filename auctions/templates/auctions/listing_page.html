@@ -1,7 +1,18 @@
 {% extends 'auctions/base.html' %}
 
+{% block title %}Active Listing | eAuction Pune{% endblock %}
+
 {% block body %}
 
-<h1>Listing Page</h1>
+<!-- <h1>Listing Page</h1> -->
+<div class="wrapper-detail container">
+    <div class="card">
+        <img style="height: 100vh; width: auto" class="card-img-top" src="{{listing.url}}" alt="Car Image" />
+        <div class="card-body">
+            <h4 class="card-title">{{listing.title}}</h4>
+            <p class="card-text">{{listing.description}}</p>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

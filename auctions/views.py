@@ -9,10 +9,10 @@ from django.urls import reverse
 
 
 def index(request):
-    # listings = Listing.objects.filter(is_closed=False)
+    listings = Listing.objects.filter(is_closed=False)[:2]
     template_name = 'auctions/index.html'
     context = {
-        # "listings": listings,
+        "listings": listings,
     }
     return render(request, template_name, context)
 
@@ -70,13 +70,15 @@ def register(request):
 
 def display_category(request):
     category = request.POST.get('category', False)
-    if category == False:
+    all_listings = Listing.objects.all()
+    if category == 'All Categories':
         listings = Listing.objects.filter(is_closed=False)
     else:
         listings = Listing.objects.filter(category=category)
         listings = set(listings)
     context = {
         "listings": listings,
+        "all_listings": all_listings,
     }
     return render(request, "auctions/listing_category.html", context)
 
@@ -85,7 +87,7 @@ def display_listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     # is_listing_in_watchlist = request.user in listing.watchlist.all()
     # comments = listing.comments.all()
-    is_owner = request.user.username == listing.owner.usernames
+    is_owner = request.user.username == listing.owner.username
     context = {
         "listing": listing,
         # "is_listing_in_watchlist": is_listing_in_watchlist,

@@ -14,7 +14,7 @@
                 {% csrf_token %}
                 <select name="category" class="form-select btn btn-outline-dark" aria-label="Default select example">
                     <option selected><a href="#">All Categories</a></option>
-                    {% for catagory in listings%}
+                    {% for category in all_listings %}
                     <option value="{{ category }}">{{ category }}</option>
                     {% endfor %}
                 </select>
