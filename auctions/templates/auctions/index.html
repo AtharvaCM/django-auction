@@ -5,29 +5,29 @@
 <!-- <a href="{% url 'display_category' %}">View Listings</a> -->
 
 <section id="hero-section">
-    <div class="description" style=" margin-top: 40px;">
-        <div class="text-center">
-            <i
-                style=" font-size: 35px; background: linear-gradient(to right, rgb(117, 116, 116) 20%, rgb(11,11,11)); background-clip:text; -webkit-text-fill-color: transparent; font-weight: 1900;">
-                <strong> WELCOME TO eAUCTION PUNE</strong></i>
-        </div>
-
-        <p style="margin: 15px; word-spacing: 2px; line-height: 50px; font-size: 30px;">A Platform to Buy in and Sell
+    <!-- <div class="description" style=" margin-top: 40px;"
+        <!-- <p style="margin: 15px; word-spacing: 2px; line-height: 50px; font-size: 30px;">A Platform to Buy in and Sell
             Out
 
             eAuction Pune is a platform for Government Departments to conduct online auctions for sale and purchase.
             It removes all barriers of geography, presence, time, space, and a small target audience.
             Propelled by a versatile, safe and secured engine developed by National Informatics Centre, many users have
             witnessed multi fold increase in revenue in auctions conducted over a diverse range.
-        </p>
+        </p><br><br><br><br><br> --
+    </div> -->
+    <div class="hero-container">
+        <h1>eAuction Pune</h1>
+        <h2>A secure, transparent platform for conducting Electronic Auctions</h2>
+        <a href="#active-listing-sec" class="btn-scroll" title="Scroll Down"><i class="fa fa-caret-down"
+                aria-hidden="true"></i></a>
     </div>
 </section>
 
-<section id="active-listing-sec mt-5" style="background:rgb(117, 116, 116)">
-    <div class="text-center">
-        <i
-            style=" font-size: 35px; background: linear-gradient(to right, rgb(117, 116, 116) 20%, rgb(11,11,11)); background-clip:text; -webkit-text-fill-color: transparent; font-weight: 1900;">
-            <strong> ONGOING AUCTIONS ...</strong></i>
+<section id="active-listing-sec" class="mt-5">
+    <div class="section-title">
+        <span>Ongoing Auctions</span>
+        <h2>Ongoing Auctions</h2>
+        <!-- <p>Makaveli in this kIlluminati</p> -->
     </div>
     <div class="container mt-5">
         <div class="row">
@@ -36,24 +36,17 @@
                 <div class="card">
                     <img class="card-img-top" src="{{listing.url}}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"><u>{{lisitng.title}}</u></h5>
+                        <h5 class="card-title">{{listing.title}}</h5>
                         <p class="card-text">{{listing.description}}</p>
-                        <a href="{% url 'display_listing' listing.pk %}" class="btn btn-primary">Go to Active
+                        <a href="{% url 'display_listing' listing.pk %}" class="btn btn-primary">Go to
                             Listing</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
-
-            <div id="header" style="position: relative;">
-                <div id="header-content"
-                    style="position: absolute; bottom: 0; left: 0; width: 100px; margin-bottom: 40px; ">
-                    <!-- border-style: solid; border-color: red; border-width: 1px; -->
-                    <a href="{% url 'display_category' %}" style="color: brown;">View all Auctions...</a>
-                </div>
-            </div>
-
         </div>
+
+        <a href="{% url 'display_category' %}" style="color: brown;">View more...</a>
     </div>
 
 </section>

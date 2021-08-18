@@ -3,47 +3,51 @@
 {% block title %}Sign UP | eAuction Pune{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-xl-5 mx-auto">
-            <div class="card card-signin flex-row my-5" style="background-color: rgb(245, 245, 245)">
+<section id="register-sec">
+    <div class="container signin-container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-5 mx-auto">
+                <div class="card card-signin flex-row my-5">
 
-                <div class="card-body">
-                    <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
-                    <h5 class="card-title text-center mb-0">Registration Form</h5>
-                    <hr style="height:1px; border-width:0; color:rgb(0, 0, 0); background-color:rgb(8, 0, 0); ">
-                    <form class="form-signin" method="POST">
-                        {% csrf_token %}
-                        <div class="form-label-group">
-                            <input type="text" name="username" id="inputUserame" class="form-control"
-                                placeholder="Username" required autofocus>
-                            <label for="inputUserame">Username</label>
-                        </div>
+                    <div class="card-body">
+                        <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
+                        <h5 class="card-title text-center mb-0">Registration Form</h5>
+                        <hr style="height:1px; border-width:0; color:rgb(0, 0, 0); background-color:rgb(8, 0, 0); ">
+                        <form class="form-signin" method="POST">
+                            {% csrf_token %}
+                            <div class="form-label-group">
+                                <input type="text" name="username" id="inputUserame" class="form-control"
+                                    placeholder="Username" required autofocus>
+                                <label for="inputUserame">Username</label>
+                            </div>
 
-                        <div class="form-label-group">
-                            <input type="email" name="email" id="inputEmail" class="form-control"
-                                placeholder="Email address" required>
-                            <label for="inputEmail">Email address</label>
-                        </div>
+                            <div class="form-label-group">
+                                <input type="email" name="email" id="inputEmail" class="form-control"
+                                    placeholder="Email address" required>
+                                <label for="inputEmail">Email address</label>
+                            </div>
 
-                        <div class="form-label-group">
-                            <input type="password" name="password" id="inputPassword" class="form-control"
-                                placeholder="Password" required>
-                            <label for="inputPassword">Password</label>
-                        </div>
+                            <div class="form-label-group">
+                                <input type="password" name="password" id="inputPassword" class="form-control"
+                                    placeholder="Password" required>
+                                <label for="inputPassword">Password</label>
+                            </div>
 
-                        <div class="form-label-group">
-                            <input type="password" name="confirmation" id="inputConfirmPassword" class="form-control"
-                                placeholder="Password" required>
-                            <label for="inputConfirmPassword">Confirm password</label>
-                        </div>
+                            <div class="form-label-group">
+                                <input type="password" name="confirmation" id="inputConfirmPassword"
+                                    class="form-control" placeholder="Confirm password" required>
+                                <label for="inputConfirmPassword">Confirm password</label>
+                            </div>
 
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-                        <a class="d-block text-center mt-2 " href="{% url 'login' %}">Already have an account? Login</a>
-                    </form>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                                type="submit">Register</button>
+                            <a class="d-block text-center mt-4" href="{% url 'login' %}">Already have an account?
+                                Login</a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}
