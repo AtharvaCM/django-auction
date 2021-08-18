@@ -67,7 +67,8 @@ h6 {
 /* ----------------------------------------------------------------------------------------- */
 /* register page */
 
-.register-wrapper {
+.register-wrapper,
+.login-wrapper {
   padding: 0px 20px;
 }
 
