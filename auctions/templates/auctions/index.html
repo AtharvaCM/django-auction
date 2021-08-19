@@ -32,7 +32,7 @@
     <div class="container mt-5">
         <div class="row">
             {% for listing in listings %}
-            <div class="col-sm-4 mb-5">
+            <div class="col-sm-5 mb-5">
                 <div class="card">
                     <img class="card-img-top" src="{{listing.url}}" alt="Card image cap">
                     <div class="card-body">
@@ -44,9 +44,8 @@
                 </div>
             </div>
             {% endfor %}
+            <a href="{% url 'display_category' %}" style="color: brown;">View more...</a>
         </div>
-
-        <a href="{% url 'display_category' %}" style="color: brown;">View more...</a>
     </div>
 
 </section>

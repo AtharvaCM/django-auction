@@ -47,10 +47,10 @@
 
             <div class="collapse navbar-collapse" id="navbarid">
 
-                <form class="form-inline ml-auto my-auto">
+                <form class="form-inline ml-auto my-auto" action="{% url 'search_results' %}" method="GET">
 
                     <div class="form-group">
-                        <input type="text" class="fa fa-search form-control empty" id="iconified"
+                        <input name="q" type="text" class="fa fa-search form-control empty" id="iconified"
                             placeholder="&#xF002;  Auction Search" />
                     </div>
                     &nbsp;
