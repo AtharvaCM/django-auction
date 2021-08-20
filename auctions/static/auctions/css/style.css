@@ -50,44 +50,65 @@ h6 {
 }
 
 .custom-navbar-title {
-  padding-top: 10px;
+  /* padding-top: 10px; */
   color: white;
   font-size: x-large;
   font-family: "Satisfy", serif;
 }
 .custom-navbar-title h2 {
   font-size: small;
+  padding: 0%;
+  margin: 0%;
+}
+.custom-navbar-title p {
+  margin: 0%;
+  padding: 0%;
 }
 /* ----------------------------------------------------------------------------------------- */
 /* register page */
 
-#register-sec {
+.register-wrapper,
+.login-wrapper {
+  padding: 0px 20px;
+}
+
+.signin-img {
   background-image: url(../img/undraw_secure_login_pdn4.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: blur(3px);
-  height: 100vh;
+  /* height: 100vh; */
 }
 
-.signin-container {
+.login-wrapper {
+  height: calc(100vh - 100px);
+}
+
+.login-img {
+  background-image: url(../img/undraw_authentication_fsn5.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* .signin-container {
   position: absolute;
   top: 18%;
   left: 10%;
-}
+} */
 
 .card-signin {
   border: 0;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   /* background-color: rgb(179, 146, 119); */
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
 .card-signin .card-title {
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: x-large;
 }
 
@@ -134,6 +155,7 @@ h6 {
 .form-label-group input {
   height: auto;
   border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.8);
 }
 
 .form-label-group > input,
@@ -352,7 +374,7 @@ input.empty:focus {
 }
 
 #active-listing-sec .card-img-top {
-  height: 200px;
+  height: 300px;
 }
 
 #active-listing-sec a {

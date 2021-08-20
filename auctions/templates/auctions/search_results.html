@@ -1,0 +1,13 @@
+{% extends 'auctions/base.html' %}
+
+{% block body %}
+<h1>Search Results</h1>
+
+<ul>
+    {% for listing in object_list %}
+    <li>
+        {{ listing.title }}, {{ listing.category }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -3,44 +3,50 @@
 {% block title %}Login | eAuction Pune{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-10 col-xl-5 mx-auto">
-            <div class="card card-signin flex-row my-5" style="background-color: rgb(245, 245, 245)">
+<section id="login-sec">
+    <div class="login-wrapper">
+        <div class="row">
+            <div class="col-lg-5 mx-auto">
+                <div class="card card-signin flex-row my-5" style="background-color: rgb(245, 245, 245)">
 
-                <div class="card-body">
-                    <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
-                    <h5 class="card-title text-center mb-0">Login Form</h5>
-                    <p>{{message}}</p>
-                    <hr style="height:1px; border-width:0; color:rgb(0, 0, 0); background-color:rgb(8, 0, 0); ">
-                    <form class="form-signin" method="POST">
-                        {% csrf_token %}
-                        <!-- <i class="w3-xxlarge"></i> Home</i> -->
+                    <div class="card-body">
+                        <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
+                        <h5 class="card-title text-center mb-0">Login Form</h5>
+                        <p>{{message}}</p>
+                        <hr style="height:1px; border-width:0; color:rgb(0, 0, 0); background-color:rgb(8, 0, 0); ">
+                        <form class="form-signin" method="POST">
+                            {% csrf_token %}
+                            <!-- <i class="w3-xxlarge"></i> Home</i> -->
 
-                        <div class="form-label-group">
-                            <input type="text" name="username" id="inputUserame" class="form-control"
-                                placeholder="Username" required autofocus>
-                            <label for="inputUserame">Username</label>
-                        </div>
+                            <div class="form-label-group">
+                                <input type="text" name="username" id="inputUserame" class="form-control"
+                                    placeholder="Username" required autofocus>
+                                <label for="inputUserame">Username</label>
+                            </div>
 
-                        <!-- <div class="form-label-group">
+                            <!-- <div class="form-label-group">
                             <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
                                 required>
                             <label for="inputEmail">Email address</label>
                         </div> -->
 
-                        <div class="form-label-group">
-                            <input type="password" name="password" id="inputPassword" class="form-control"
-                                placeholder="Password" required>
-                            <label for="inputPassword">Password</label>
-                        </div>
-                        <button class="btn btn-lg btn-primary btn-block " type="submit">SUBMIT</button>
-                        <a class="d-block text-center mt-4 " href="{% url 'register' %}">Don't have an account?
-                            Register</a>
-                    </form>
+                            <div class="form-label-group">
+                                <input type="password" name="password" id="inputPassword" class="form-control"
+                                    placeholder="Password" required>
+                                <label for="inputPassword">Password</label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block " type="submit">SUBMIT</button>
+                            <a class="d-block text-center mt-4 " href="{% url 'register' %}">Don't have an account?
+                                Register</a>
+                        </form>
+                    </div>
                 </div>
+            </div>
+
+            <div class="col-lg-6 mx-auto login-img">
+
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}
