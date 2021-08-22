@@ -22,8 +22,89 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
+      <a
+        class="navbar-brand"
+        href="./auctions/static/auctions/img/auction.jpeg"
+        target="_blank"
+      >
+        <img
+          src="./auctions/static/auctions/img/auction.jpeg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        <a href="./about.html" target="_blank">eAuction Pune</a>
+      </a>
+    </nav>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="fa fa-search form-control mr-sm-2"
+        id="iconified"
+        type="search"
+        placeholder="&#xF002   Search"
+        aria-label="Search"
+      />
+      <!-- <input type="text" class="fa fa-search form-control empty" id="iconified"
+      placeholder="&#xF002;  Auction Search" /> -->
+    </form>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+      Search
+    </button>
 
-  <nav class="navbar navbar-expand-lg navbar-fixed-top justify-content-between custom-navbar">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./newfile.html">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Auctions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Ongoing Auctions</a>
+            <a class="dropdown-item" href="#">Previous auctions</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="./feedback.html">Help</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./signup.html">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-fixed-top justify-content-between custom-navbar">
 
     <a class="navbar-brand ml-auto " href="#">
       <img src="auction.jpeg" alt="logo" style="width:60px; ">
@@ -42,7 +123,6 @@
             placeholder="&#xF002;  Auction Search" />
         </div>
         &nbsp;
-        <!-- <input class="form-control mr-auto " type="text" placeholder="<i class='icon-search'></i>"> -->
         <button class="btn btn-success" type="submit">Search</button>
       </form>
 
@@ -65,7 +145,9 @@
         </li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
+
+  
   <section id="hero-section">
     <div class="description" style=" margin-top: 40px;">
       <div class="text-center">
@@ -184,6 +266,7 @@
               <ul class="list-unstyled">
                 <li> <i class="fa fa-phone" style="font-size:18px"></i> &nbsp;1234567891</li>
                 <li><a href="mailto:rugvedij1804@gmail.com" target="_blank">Email Me</a></li>
+                <li><a href="./feedback.html" target="_blank">Help</a></li>
               </ul>
             </div>
           </div>
