@@ -147,11 +147,12 @@ input.empty:focus {
 }
 
 .custom-footer {
+  color: white;
   background-image: linear-gradient(
     to bottom right,
     rgb(43, 26, 4) 40%,
     rgb(88, 44, 2)
   );
-  height: 70px;
-  padding-bottom: 1px;
+  /* height: 70px; */
+  /* padding-bottom: 1px; */
 }
