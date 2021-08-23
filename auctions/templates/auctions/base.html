@@ -33,12 +33,13 @@
 <body class="d-flex flex-column min-vh-100">
 
     <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <nav class="navbar navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark "
+            style="background: linear-gradient(to bottom right, rgb(43, 26, 4) 30%, rgb(119, 59, 2)) !important; ">
+            <nav class="navbar navbar-dark " style="background: transparent !important;">
                 <a class="navbar-brand" href="./auctions/static/auctions/img/auction.jpeg" target="_blank">
-                    <img src="./auctions/static/auctions/img/auction.jpeg" width="30" height="30"
-                        class="d-inline-block align-top" alt="" />
-                    <a href="./about.html" target="_blank">eAuction Pune</a>
+                    <img src="{% static 'auctions/img/auction.jpeg' %}" width="30" height="30"
+                        class="d-inline-block align-top " alt="" />
+                    <strong>eAuction Pune</strong>
                 </a>
             </nav>
 
@@ -49,18 +50,18 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="fa fa-search form-control mr-sm-2" id="iconified" type="search"
-                        placeholder="&#xF002 Search" aria-label="Search" />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                <form class="form-inline my-2 my-lg-0 ml-auto" action="{% url 'search_results' %}" method="GET">
+                    <input name="q" type="text" class="fa fa-search form-control empty" id="iconified"
+                        placeholder="&#xF002;  Auction Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0 mx-auto ml-md-2 nav-form-btn" type="submit">
                         Search</button>
                 </form>
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./newfile.html">Home </a>
+                        <a class="nav-link" href="{% url 'index' %}">Home </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./about.html">About</a>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -68,18 +69,33 @@
                             Auctions
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Ongoing Auctions</a>
+                            <a class="dropdown-item" href="{% url 'display_category' %}">Ongoing Auctions</a>
                             <a class="dropdown-item" href="#">Previous auctions</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./feedback.html">Help</a>
+                            <a class="dropdown-item" href="./enquiry.html">Help & Support</a>
                         </div>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Watchlist</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </li>
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="./signup.html">Signup</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'register' %}">Sign Up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Login</a>
+                        <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -147,24 +163,79 @@
     {% block body %}
     {% endblock %}
 
-    <footer class="py-2 flex-shrink-0 mt-auto custom-footer">
-        <div class="container text-center ">
-            <span class="footer-text text-light">
-                <a class="text-light" href="{% url 'about' %}">About</a>
-                &emsp;&emsp;&emsp;|&emsp;&emsp;&emsp;
-                <a href="mailto:rugvedij1804@gmail.com" target="_blank" class="text-light">Email Me</a>
-                &emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;Terms & Conditions &emsp;&emsp;&emsp;| &emsp;&emsp;&emsp;Contact
-                Us :
-                &nbsp;
-                <i class="fa fa-phone" style="font-size:18px"></i> &nbsp;1234567891
-            </span>
-            <br>
-            <div class="footer-text text-light" style="padding-top: 7px;">&copy; 2021 Copyright & Designed by
-                <a class="text-light" href="https://atharvacm.netlify.app" target="_blank">Atharva Mahamuni & Rugvedi
-                    Jamgaonkar
-                </a>
-            </div>
+    <footer class="mainfooter custom-footer" role="contentinfo">
+        <div class="footer-top p-y-2">
+            <div class="container-fluid">
 
+            </div>
+        </div>
+        <div class="footer-middle mt-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>Address</h4>
+                            <address>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        Modern College, <br>
+                                        Shivajinagar,<br>
+                                        Pune - 02.<br>
+                                    </li>
+                                </ul>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>About Company</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li><a href="{% url 'index' %}">Go to Home Page</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>Useful Links</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="{% url 'display_category' %}">Ongoing Auctions</a></li>
+                                <li><a href="#">Previous Auctions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <!--Column1-->
+                        <div class="footer-pad">
+                            <h4>Contact Us</h4>
+                            <ul class="list-unstyled">
+                                <li> <i class="fa fa-phone" style="font-size:18px"></i> &nbsp;1234567891</li>
+                                <li><a href="mailto:rugvedij1804@gmail.com">Email Me</a></li>
+                                <li><a href="./enquiry.html">Help & Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <!--Footer Bottom-->
+                        <p class="text-xs-center">&copy; Copyright 2021 & Designed by
+                            <a class="text-light" href="https://atharvacm.netlify.app" target="_blank">Atharva Mahamuni
+                            </a>and
+                            <a class="text-light" href="https://github.com/rugvedi18" target="_blank">Rugvedi
+                                Jamgaonkar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
