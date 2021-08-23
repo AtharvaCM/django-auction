@@ -5,7 +5,7 @@
 {% block body %}
 
 <!-- <h1>Listing Page</h1> -->
-<div class="wrapper-detail container">
+<!-- <div class="wrapper-detail container">
     <div class="card">
         <img style="height: 100vh; width: auto" class="card-img-top" src="{{listing.url}}" alt="Car Image" />
         <div class="card-body">
@@ -13,6 +13,62 @@
             <p class="card-text">{{listing.description}}</p>
             <p>{{listing.bid}}</p>
         </div>
+    </div>
+</div> -->
+
+<div class="container my-4">
+    {% if listing.is_closed and user == listing.bid.user %}
+    <div class="alert alert-success" role="alert">
+        Congratulations {{ listing.bid.user }}, you won the Auction!
+    </div>
+    {% endif %}
+
+    {% if is_owner and not listing.is_closed%}
+    <a class="btn btn-danger float-right" id="close-auction" href="{% url 'close_auction' listing.id%}"> Close Auction
+    </a>
+    {% endif %}
+
+    <div class="container">
+        {% if message %}
+        {% if updated %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+        {% else %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endif %}
+        {% endif %}
+
+        <div class="text-center">
+            <div class="badge badge-pill badge-primary">{{ listing.category }}</div>
+            <h1>{{listing.title }}</h1>
+            <img src="{{ listing.url }}" class="img-fluid" alt="Listing picture"><br><br>
+            <p> {{ listing.description }} </p>
+            <p id="bid">Current bid: <span id="price">{{ listing.bid }}</span></p>
+        </div>
+
+        {% if user.is_authenticated and not listing.is_closed%}
+        <form action="{% url 'new_bid' listing.id%}" method="post" class="text-center">
+            {% csrf_token %}
+            <label>New Bid:</label>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row">
+                        <div class="col-lg-6 ml-auto">
+                            <input type="text" name="bid" class="form-control" id="exampleFormControlInput1"
+                                style="width:100%">
+                        </div>
+                        <div class="col-lg-3 mt-3 mt-lg-0 mr-auto">
+                            <button id="bid-button" class="btn btn-outline-primary" type="submit">Make a new
+                                bid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        {% endif %}
     </div>
 </div>
 
