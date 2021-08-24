@@ -3,13 +3,16 @@
   --input-padding-y: 0.75rem;
 }
 
+.nav-link {
+  font-size: larger;
+
+}
+
 .custom-navbar {
   color: white;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   height: 100px;
 }
 
@@ -35,8 +38,7 @@
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -67,12 +69,12 @@
   border-radius: 2rem;
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -112,7 +114,7 @@
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -137,10 +139,13 @@ input.empty {
   background-color: transparent;
   color: white;
 }
+
 input.empty::placeholder {
   color: rgb(231, 227, 218);
-  opacity: 1; /* Firefox */
+  opacity: 1;
+  /* Firefox */
 }
+
 input.empty:focus {
   background-color: transparent;
   color: wheat;
@@ -148,11 +153,9 @@ input.empty:focus {
 
 .custom-footer {
   color: white;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(43, 26, 4) 40%,
-    rgb(88, 44, 2)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(43, 26, 4) 40%,
+      rgb(88, 44, 2));
   /* height: 70px; */
   /* padding-bottom: 1px; */
 }
