@@ -7,33 +7,37 @@ About | eAuction Pune
 {% block head %}
 <style>
     body {
-        background: linear-gradient(to bottom right, rgb(21, 20, 20) 50%, rgb(101, 100, 100));
+
         margin: 0;
-        padding: 0;
+
+
     }
 
     .title-welcome {
         text-align: center;
         font-style: oblique;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
         font-weight: 400;
         font-size: 50px;
-        color: white;
         padding-top: 90px;
     }
 
-    .about-p {
+    .wrapper-about p {
         text-indent: 50px;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "Times New Roman", Times, serif;
         font-size: 30px;
         letter-spacing: 2px;
         line-height: 1.5;
-        color: wheat;
+
     }
 
     .wrapper-about {
-        height: 100vh;
+        color: white;
+        padding: 30px;
         box-sizing: border-box;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../static/auctions/img/main-img.jpg");
+        background-size: cover;
+        background-attachment: fixed;
     }
 </style>
 {% endblock %}
@@ -42,13 +46,29 @@ About | eAuction Pune
 
 <div class="wrapper-about">
     <div class="title-welcome">Welcome to eAuction Pune</div>
-    <h3 style="text-align: center; margin-top: 0%; padding-top: 0%; color: wheat;">A Platform to Buy in and Sell Out
-    </h3><br><br>
-    <p class="about-p">eAuction Pune is a platform for Government Departments to conduct online actions for sale
-        and purchase. It removes all barriers of geography, presence, time, space, and a small
-        target audience. Propelled by a versatile, safe and secured engine developed by National
-        Informatics Centre, many users have witnessed multi fold increase in revenue in auctions
-        conducted over a diverse range.
+    <h3 style="
+          text-align: center;
+          margin-top: 0%;
+          margin-bottom: 100px;
+          padding-top: 0%;
+          
+        ">A Platform to Buy in and Sell Out
+    </h3>
+    <p>
+        <ar style="font-size:larger;">A</ar>n online auction (or also electronic auction or e-auction or
+        eAuction) is an
+        auction
+        which is held over the internet. The scope and reach of these auctions have been propelled by the
+        Internet to a level beyond what the initial purveyors had anticipated. This is mainly because
+        online auctions break down and remove the physical limitations of traditional auctions such as
+        geography, presence, time, space, and a small target audience.
+        <p>eAuction Pune is a platform for Government Departments to conduct online
+            actions for sale and purchase. It removes all barriers of geography,
+            presence, time, space, and a small target audience. Propelled by a
+            versatile, safe and secured engine developed by National Informatics
+            Centre, many users have witnessed multi fold increase in revenue in
+            auctions conducted over a diverse range.
+        </p>
     </p>
 </div>
 
