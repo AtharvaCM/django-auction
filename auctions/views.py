@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Listing, User
+from .models import Listing, User, Bid
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db import IntegrityError
@@ -99,6 +99,12 @@ class SearchResultsView(ListView):
         return object_list
 
 
+def about(request):
+    template_name = 'auctions/about.html'
+    context = {}
+    return render(request, template_name, context)
+
+
 def display_category(request):
     all_listings = Listing.objects.all()
 
@@ -127,7 +133,6 @@ def display_category(request):
 def display_listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
     # is_listing_in_watchlist = request.user in listing.watchlist.all()
-    # comments = listing.comments.all()
     is_owner = request.user.username == listing.owner.username
     context = {
         "listing": listing,
@@ -138,7 +143,39 @@ def display_listing(request, listing_id):
     return render(request, "auctions/listing_page.html", context)
 
 
-def about(request):
-    template_name = 'auctions/about.html'
-    context = {}
-    return render(request, template_name, context)
+def closed_listings(request):
+    pass
+
+
+def create_listing(request):
+    pass
+
+
+def new_bid(request, listing_id):
+    # you have to use online imgs to render it properly
+    listing = Listing.objects.get(pk=listing_id)
+    current_bid = listing.bid.bid
+    new_bid = bid = int(request.POST["bid"])
+    if new_bid > current_bid:
+        updated_bid = Bid(bid=new_bid, user=request.user)
+        updated_bid.save()
+        listing.bid = updated_bid
+        listing.save()
+        context = {
+            "listing": listing,
+            "message": "Bid was updated successfully",
+            "updated": True,
+        }
+        print('---------', listing.url)
+        return render(request, "auctions/listing_page.html", context)
+    else:
+        context = {
+            "listing": listing,
+            "message": "Bid was updated successfully",
+            "updated": True,
+        }
+        return render(request, "auctions/listing_page.html", context)
+
+
+def close_auction(request):
+    pass

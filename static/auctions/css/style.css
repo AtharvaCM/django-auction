@@ -2,7 +2,6 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
-
 * {
   scroll-behavior: smooth !important;
 }
@@ -44,8 +43,8 @@ h6 {
   color: white;
   background-image: linear-gradient(
     to bottom right,
-    rgb(43, 26, 4) 30%,
-    rgb(119, 59, 2)
+    rgb(43, 26, 4) 40%,
+    rgb(88, 44, 2)
   );
   height: 100px;
 }
@@ -56,22 +55,14 @@ h6 {
   font-size: x-large;
   font-family: "Satisfy", serif;
 }
-
 .custom-navbar-title h2 {
   font-size: small;
   padding: 0%;
   margin: 0%;
 }
-
 .custom-navbar-title p {
   margin: 0%;
   padding: 0%;
-}
-
-@media only screen and (max-width: 570px) {
-  .nav-form-btn {
-    width: 100%;
-  }
 }
 /* ----------------------------------------------------------------------------------------- */
 /* register page */
@@ -242,21 +233,17 @@ input.empty {
   background-color: transparent;
   color: white;
 }
-
 input.empty::placeholder {
   color: rgb(231, 227, 218);
-  opacity: 1;
-  /* Firefox */
+  opacity: 1; /* Firefox */
 }
-
 input.empty:focus {
   background-color: transparent;
   color: wheat;
 }
-
 /* ----------------------------------------------------------------------------------------- */
 #hero-section {
-  height: calc(100vh - 69px);
+  height: calc(100vh - 100px);
   background-image: url("../img/main-img.jpg");
   background-size: cover;
   background-position: center;
@@ -320,7 +307,6 @@ input.empty:focus {
   0% {
     transform: translateY(5px);
   }
-
   100% {
     transform: translateY(-5px);
   }
@@ -330,7 +316,6 @@ input.empty:focus {
   0% {
     transform: translateY(5px);
   }
-
   100% {
     transform: translateY(-5px);
   }
@@ -379,12 +364,10 @@ input.empty:focus {
     font-size: 28px;
     margin-bottom: 15px;
   }
-
   .section-title span {
     font-size: 38px;
   }
 }
-
 /* ----------------------------------------------------------------------------------------- */
 /* active-listing-sec */
 #active-listing-sec h5 {
@@ -407,28 +390,17 @@ input.empty:focus {
 #active-listing-sec a:hover {
   background: #ffc85a;
 }
-
 /* ----------------------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
+  color: white;
   background-image: linear-gradient(
     to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
+    rgb(43, 26, 4) 40%,
+    rgb(88, 44, 2)
   );
+  height: 70px;
   padding-bottom: 1px;
-  color: antiquewhite;
-}
-.footer-pad h4 {
-  color: white;
-}
-.custom-footer a {
-  color: antiquewhite;
-}
-
-.custom-footer a:hover {
-  color: aqua;
-  text-decoration: none;
 }
