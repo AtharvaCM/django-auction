@@ -32,32 +32,21 @@ h6 {
 }
 
 /* .custom-navbar {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  color: white;
+  background-image: linear-gradient(to bottom right,
+      rgb(43, 26, 4) 30%,
+      rgb(119, 59, 2));
   height: 100px;
 } */
 
-.custom-navbar {
-  color: white;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(43, 26, 4) 30%,
-    rgb(119, 59, 2)
-  );
-  height: 100px;
-}
-
-.custom-navbar-title {
-  /* padding-top: 10px; */
-  color: white;
+/* .custom-navbar-title { */
+/* padding-top: 10px; */
+/* color: white;
   font-size: x-large;
   font-family: "Satisfy", serif;
-}
+} */
 
-.custom-navbar-title h2 {
+/* .custom-navbar-title h2 {
   font-size: small;
   padding: 0%;
   margin: 0%;
@@ -66,13 +55,14 @@ h6 {
 .custom-navbar-title p {
   margin: 0%;
   padding: 0%;
-}
+} */
 
 @media only screen and (max-width: 570px) {
   .nav-form-btn {
     width: 100%;
   }
 }
+
 /* ----------------------------------------------------------------------------------------- */
 /* register page */
 
@@ -125,8 +115,7 @@ h6 {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -168,12 +157,12 @@ h6 {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -213,7 +202,7 @@ h6 {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -244,14 +233,14 @@ input.empty {
 }
 
 input.empty::placeholder {
-  color: rgb(231, 227, 218);
+  color: rgb(142, 145, 139);
   opacity: 1;
   /* Firefox */
 }
 
 input.empty:focus {
   background-color: transparent;
-  color: wheat;
+  color: rgb(2, 1, 0);
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -413,17 +402,17 @@ input.empty:focus {
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
+
 .footer-pad h4 {
   color: white;
 }
+
 .custom-footer a {
   color: antiquewhite;
 }
