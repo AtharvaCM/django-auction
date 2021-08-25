@@ -115,7 +115,8 @@ h6 {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center
+    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -157,12 +158,12 @@ h6 {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -202,7 +203,7 @@ h6 {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -280,6 +281,7 @@ input.empty:focus {
   font-size: 64px;
   font-family: "Satisfy", serif;
   color: #fff;
+  text-align: center;
 }
 
 #hero-section h2 {
@@ -289,6 +291,7 @@ input.empty:focus {
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #hero-section .btn-scroll {
@@ -370,7 +373,7 @@ input.empty:focus {
   }
 
   .section-title span {
-    font-size: 38px;
+    font-size: 32px;
   }
 }
 
@@ -385,7 +388,7 @@ input.empty:focus {
 }
 
 #active-listing-sec a {
-  background: rgb(88, 44, 2);
+  /* background: rgb(88, 44, 2); */
   border: 0;
   padding: 7px;
   color: #fff;
@@ -393,18 +396,45 @@ input.empty:focus {
   border-radius: 5px;
 }
 
-#active-listing-sec a:hover {
+/* #active-listing-sec a:hover {
   background: #ffc85a;
+} */
+
+.view-more-btn {
+  height: 40px;
+  width: 15%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .view-more-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .view-more-btn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 90%;
+  }
 }
 
 /* ----------------------------------------------------------------------------------------- */
-
+.closed-listings-wrapper {
+  min-height: calc(100vh - 252.5px);
+}
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(to bottom right,
-      rgb(21, 20, 20) 40%,
-      rgb(101, 100, 100));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 20, 20) 40%,
+    rgb(101, 100, 100)
+  );
   padding-bottom: 1px;
   color: antiquewhite;
 }

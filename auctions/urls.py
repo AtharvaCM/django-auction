@@ -10,6 +10,7 @@ urlpatterns = [
 
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
     path('about', views.about, name='about'),
+    path('help', views.help, name='help_and_support'),
 
     path('display_category', views.display_category, name='display_category'),
     path('<int:listing_id>', views.display_listing, name='display_listing'),
@@ -20,7 +21,6 @@ urlpatterns = [
     path("<int:listing_id>/new_bid", views.new_bid, name="new_bid"),
     path("<int:listing_id>/close_auction",
          views.close_auction, name="close_auction"),
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()

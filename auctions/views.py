@@ -105,6 +105,12 @@ def about(request):
     return render(request, template_name, context)
 
 
+def help(request):
+    template_name = 'auctions/enquiry.html'
+    context = {}
+    return render(request, template_name, context)
+
+
 def display_category(request):
     all_listings = Listing.objects.all()
 
@@ -144,7 +150,12 @@ def display_listing(request, listing_id):
 
 
 def closed_listings(request):
-    pass
+    closed_listing = Listing.objects.filter(is_closed=True)
+    context = {
+        "listings": closed_listing,
+    }
+    template_name = 'auctions/closed_listings.html'
+    return render(request, template_name, context)
 
 
 def create_listing(request):
