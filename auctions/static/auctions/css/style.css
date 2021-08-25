@@ -31,31 +31,13 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/* .custom-navbar {
-  color: white;
-  background-image: linear-gradient(to bottom right,
-      rgb(43, 26, 4) 30%,
-      rgb(119, 59, 2));
-  height: 100px;
-} */
-
-/* .custom-navbar-title { */
-/* padding-top: 10px; */
-/* color: white;
-  font-size: x-large;
-  font-family: "Satisfy", serif;
-} */
-
-/* .custom-navbar-title h2 {
-  font-size: small;
-  padding: 0%;
-  margin: 0%;
+.custom-navbar {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-.custom-navbar-title p {
-  margin: 0%;
-  padding: 0%;
-} */
+.custom-navbar input {
+  border-color: #5cb85c;
+}
 
 @media only screen and (max-width: 570px) {
   .nav-form-btn {
@@ -229,7 +211,7 @@ input.empty {
   font-weight: normal;
   text-decoration: inherit;
   background-color: transparent;
-  color: white;
+  color: black;
 }
 
 input.empty::placeholder {
@@ -285,7 +267,7 @@ input.empty:focus {
 #hero-section h2 {
   color: #eee;
   margin-bottom: 50px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
