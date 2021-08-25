@@ -33,9 +33,8 @@
 <body class="d-flex flex-column min-vh-100">
 
     <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: rgb(236, 236, 236);">
+        <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
             <div class="navbar navbar-light ">
-                <!-- <a class="navbar-brand" href="./auctions/static/auctions/img/auction.jpeg" target="_blank"> -->
                 <img src="{% static 'auctions/img/auction.jpeg' %}" width="50" height="50"
                     class="d-inline-block align-top " alt="logo" />
                 <strong
@@ -73,7 +72,8 @@
                             <a class="dropdown-item" href="{% url 'display_category' %}">Ongoing Auctions</a>
                             <a class="dropdown-item" href="{% url 'closed_listings' %}">Previous auctions</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./enquiry.html">Help & Support</a>
+                            <a class="dropdown-item" href="./enquiry.html">Enquiry</a>
+                            <a class="dropdown-item" href="./terms.html">Terms & Conditions</a>
                         </div>
                     </li>
                     {% if user.is_authenticated %}
