@@ -11,6 +11,7 @@ urlpatterns = [
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
     path('about', views.about, name='about'),
     path('help', views.help, name='help_and_support'),
+    path('terms', views.terms, name='terms'),
 
     path('display_category', views.display_category, name='display_category'),
     path('<int:listing_id>', views.display_listing, name='display_listing'),
