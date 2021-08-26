@@ -51,6 +51,11 @@ h6 {
 .register-wrapper,
 .login-wrapper {
   padding: 0px 20px;
+
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/main-img.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .signin-img {
@@ -92,13 +97,13 @@ h6 {
   margin-bottom: 2rem;
   font-weight: 600;
   font-size: x-large;
+  color: white;
 }
 
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -140,12 +145,12 @@ h6 {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -185,7 +190,7 @@ h6 {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -409,14 +414,34 @@ input.empty:focus {
 .closed-listings-wrapper {
   min-height: calc(100vh - 252.5px);
 }
+
+/* ----------------------------------------------------------------------------------------- */
+/* terms page */
+
+.terms-wrapper {
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../img/main-img.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.terms-wrapper h2 {
+  margin-top: 50px;
+  font-family: 'Klee One', cursive;
+}
+
+.terms-details {
+  font-size: larger;
+}
+
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
