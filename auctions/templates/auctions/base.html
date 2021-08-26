@@ -72,8 +72,8 @@
                             <a class="dropdown-item" href="{% url 'display_category' %}">Ongoing Auctions</a>
                             <a class="dropdown-item" href="{% url 'closed_listings' %}">Previous auctions</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="./enquiry.html">Enquiry</a>
-                            <a class="dropdown-item" href="./terms.html">Terms & Conditions</a>
+                            <a class="dropdown-item" href="{% url 'help_and_support' %}">Enquiry</a>
+                            <a class="dropdown-item" href="{% url 'terms' %}">Terms & Conditions</a>
                         </div>
                     </li>
                     {% if user.is_authenticated %}
