@@ -110,6 +110,11 @@ def help(request):
     context = {}
     return render(request, template_name, context)
 
+def terms(request):
+    template_name = 'auctions/terms.html'
+    context = {}
+    return render(request, template_name, context)
+
 
 def display_category(request):
     all_listings = Listing.objects.all()
