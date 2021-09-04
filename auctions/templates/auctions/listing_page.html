@@ -29,6 +29,11 @@
     {% endif %}
 
     <div class="container">
+        <div class="back-link">
+            <a href="{% url 'display_category' %}" class="text-primary">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Ongoing Auctions
+            </a>
+        </div>
         {% if message %}
         {% if updated %}
         <div class="alert alert-success" role="alert">

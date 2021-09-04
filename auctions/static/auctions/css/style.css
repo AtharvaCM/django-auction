@@ -45,6 +45,18 @@ h6 {
   }
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* ----------------------------------------------------------------------------------------- */
 /* register page */
 
@@ -53,10 +65,10 @@ h6 {
   padding: 0px 20px;
 
   box-sizing: border-box;
-  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+  /* background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("../img/main-img.jpg");
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; */
 }
 
 .signin-img {
@@ -98,14 +110,13 @@ h6 {
   margin-bottom: 2rem;
   font-weight: 600;
   font-size: x-large;
-  color: white;
+  color: rgb(108, 99, 255);
 }
 
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -147,12 +158,12 @@ h6 {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -192,7 +203,7 @@ h6 {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -396,7 +407,7 @@ input.empty:focus {
   background: #ffc85a;
 } */
 
-.view-more-btn {
+#active-listing-sec .view-more-btn {
   height: 40px;
   width: 15%;
 }
@@ -418,6 +429,7 @@ input.empty:focus {
     width: 90%;
   }
 }
+
 /* ----------------------------------------------------------------------------------------- */
 /* display category page  */
 
@@ -472,6 +484,7 @@ input.empty:focus {
   font-size: 50px;
   padding-top: 0px;
 }
+
 /* ----------------------------------------------------------------------------------------- */
 /* terms page */
 
@@ -483,6 +496,7 @@ input.empty:focus {
     url("../img/main-img.jpg");
   background-size: cover;
 }
+
 @media (max-width: 400px) {
   .terms-wrapper {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
@@ -506,11 +520,9 @@ input.empty:focus {
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
