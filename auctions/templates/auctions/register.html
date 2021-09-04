@@ -19,15 +19,45 @@
                         <form class="form-signin" method="POST">
                             {% csrf_token %}
                             <div class="form-label-group">
+                                <input type="text" name="fname" id="inputFname" class="form-control"
+                                    placeholder="First Name" required autofocus>
+                                <label for="inputFname">First Name</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name="lname" id="inputLname" class="form-control"
+                                    placeholder="Last Name" required>
+                                <label for="inputLname">Last Name</label>
+                            </div>
+
+                            <div class="form-label-group">
                                 <input type="text" name="username" id="inputUserame" class="form-control"
-                                    placeholder="Username" required autofocus>
+                                    placeholder="Username" required>
                                 <label for="inputUserame">Username</label>
                             </div>
 
                             <div class="form-label-group">
+                                <input type="tel" name="age" id="inputAge" class="form-control" placeholder="Age"
+                                    required>
+                                <label for="inputAge">Age</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name="phone" id="inputPhone" class="form-control"
+                                    placeholder="Mobile No." required>
+                                <label for="inputPhone">Mobile No.</label>
+                            </div>
+
+                            <div class="form-label-group">
                                 <input type="email" name="email" id="inputEmail" class="form-control"
-                                    placeholder="Email address" required>
-                                <label for="inputEmail">Email address</label>
+                                    placeholder="Email" required>
+                                <label for="inputEmail">Email</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="text" name="address" id="inputAddress" class="form-control"
+                                    placeholder="Address" required>
+                                <label for="inputAddress">Address</label>
                             </div>
 
                             <div class="form-label-group">

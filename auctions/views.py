@@ -117,7 +117,8 @@ def terms(request):
 
 
 def display_category(request):
-    all_listings = Listing.objects.all()
+    all_listings = Listing.objects.order_by().values_list('category', flat=True).distinct()
+    print(all_listings)
 
     if request.method == 'GET':
         listings = Listing.objects.filter(is_closed=False)
@@ -132,8 +133,8 @@ def display_category(request):
         listings = Listing.objects.filter(is_closed=False)
     else:
         listings = Listing.objects.filter(category=category)
-        listings = set(listings)
 
+    listings = set(listings)
     context = {
         "listings": listings,
         "all_listings": all_listings,
