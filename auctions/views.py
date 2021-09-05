@@ -59,8 +59,8 @@ def register(request):
     else:
         if request.method == 'POST':
             username = request.POST['username']
-            fname = request.POST['fname']
-            lname = request.POST['lname']
+            first_name = request.POST['fname']
+            last_name = request.POST['lname']
             email = request.POST['email']
             phone = request.POST['phone']
             address = request.POST['address']
@@ -74,10 +74,13 @@ def register(request):
                     'message': 'Passwords must match!'
                 })
 
+            print(first_name, last_name, phone, address, age)
+
             # Attempt to create new user
             try:
                 user = User.objects.create_user(
-                    username, email, password, fname, lname, phone, address, age)
+                    username, email, password, first_name=first_name, last_name=last_name, phone=phone, address=address, age=age)
+                print('create user called')
                 user.save()
             except IntegrityError:
                 return render(request, 'auctions/register.html', {
@@ -86,6 +89,7 @@ def register(request):
             login(request, user)
             return HttpResponseRedirect(reverse('index'))
         else:
+            print('nahi hote rav')
             return render(request, 'auctions/register.html')
 
 # ------------------------------------------------------------------------------------------------------------------
@@ -124,7 +128,8 @@ def terms(request):
 
 
 def display_category(request):
-    all_listings = Listing.objects.order_by().values_list('category', flat=True).distinct()
+    all_listings = Listing.objects.order_by().values_list(
+        'category', flat=True).distinct()
     print(all_listings)
 
     if request.method == 'GET':
@@ -172,7 +177,36 @@ def closed_listings(request):
 
 
 def create_listing(request):
-    pass
+    template_name = 'auctions/create_listing.html'
+    if request.method == "POST":
+        user = request.user
+        title = request.POST["title"]
+        description = request.POST["description"]
+        image_url = request.POST["image_url"]
+        category = request.POST['category']
+
+        try:
+            # Create new bid
+            bid = Bid(bid=int(request.POST["bid"]), user=user)
+            bid.save()
+
+            # Create new listing
+            listing = Listing(title=title, category=category, owner=user,
+                              is_closed=False, description=description, bid=bid, url=image_url)
+            listing.save()
+            message_success = 'Successfully created listing'
+            context = {
+                'message_success': message_success,
+            }
+        except:
+            message_danger = 'Cannot create listing!'
+            context = {
+                'message_danger': message_danger,
+            }
+        # return HttpResponseRedirect(reverse("index"))
+        return render(request, template_name, context)
+    else:
+        return render(request, template_name)
 
 
 def new_bid(request, listing_id):

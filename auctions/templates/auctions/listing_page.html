@@ -17,6 +17,18 @@
 </div> -->
 
 <div class="container my-4">
+    <div class="back-link mb-3">
+        <a href="{% url 'display_category' %}" class="text-primary">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i> Ongoing Auctions
+        </a>
+    </div>
+
+    {% if listing.is_closed and user != listing.bid.user %}
+    <div class="alert alert-primary" role="alert">
+        {{ listing.bid.user }}, won the Auction! for RS. {{ listing.bid.bid }}
+    </div>
+    {% endif %}
+
     {% if listing.is_closed and user == listing.bid.user %}
     <div class="alert alert-success" role="alert">
         Congratulations {{ listing.bid.user }}, you won the Auction!
@@ -29,11 +41,6 @@
     {% endif %}
 
     <div class="container">
-        <div class="back-link">
-            <a href="{% url 'display_category' %}" class="text-primary">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i> Ongoing Auctions
-            </a>
-        </div>
         {% if message %}
         {% if updated %}
         <div class="alert alert-success" role="alert">
