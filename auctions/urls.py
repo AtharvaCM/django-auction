@@ -9,12 +9,18 @@ urlpatterns = [
     path('login', views.login_view, name='login'),
     path('logout', views.logout_view, name='logout'),
     path('register', views.register, name='register'),
-    path('profile', views.profile, name='profile'),
 
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
     path('about', views.about, name='about'),
     path('help', views.help, name='help_and_support'),
     path('terms', views.terms, name='terms'),
+
+    path('profile', views.profile, name='profile'),
+    path("display_watchlist", views.display_watchlist, name="display_watchlist"),
+    path("<int:listing_id>/add_watchlist",
+         views.add_watchlist, name="add_watchlist"),
+    path("<int:listing_id>/remove_watchlist",
+         views.remove_watchlist, name="remove_watchlist"),
 
     path('display_category', views.display_category, name='display_category'),
     path('<int:listing_id>', views.display_listing, name='display_listing'),

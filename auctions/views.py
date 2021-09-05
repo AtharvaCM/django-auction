@@ -91,12 +91,6 @@ def register(request):
         else:
             print('nahi hote rav')
             return render(request, 'auctions/register.html')
-
-
-def profile(request):
-    template_name = 'auctions/profile.html'
-    context = {}
-    return render(request, template_name, context)
 # ------------------------------------------------------------------------------------------------------------------
 
 
@@ -131,6 +125,39 @@ def terms(request):
     context = {}
     return render(request, template_name, context)
 
+# ------------------------------------------------------------------------------------------------------------------
+
+
+def profile(request):
+    template_name = 'auctions/profile.html'
+    context = {}
+    return render(request, template_name, context)
+
+
+def display_watchlist(request):
+    user = request.user
+    listings = user.watch_listings.all()
+    context = {
+        "listings": listings,
+    }
+    return render(request, "auctions/watchlist_page.html", context)
+
+
+def add_watchlist(request, listing_id):
+    user = request.user
+    listing = Listing.objects.get(pk=listing_id)
+    listing.watchlist.add(user)
+    return HttpResponseRedirect(reverse("display_listing", args=(listing_id, )))
+
+
+def remove_watchlist(request, listing_id):
+    user = request.user
+    listing = Listing.objects.get(pk=listing_id)
+    listing.watchlist.remove(user)
+    return HttpResponseRedirect(reverse("display_listing", args=(listing_id, )))
+
+# ------------------------------------------------------------------------------------------------------------------
+
 
 def display_category(request):
     all_listings = Listing.objects.order_by().values_list(
@@ -161,11 +188,11 @@ def display_category(request):
 
 def display_listing(request, listing_id):
     listing = Listing.objects.get(pk=listing_id)
-    # is_listing_in_watchlist = request.user in listing.watchlist.all()
+    is_listing_in_watchlist = request.user in listing.watchlist.all()
     is_owner = request.user.username == listing.owner.username
     context = {
         "listing": listing,
-        # "is_listing_in_watchlist": is_listing_in_watchlist,
+        "is_listing_in_watchlist": is_listing_in_watchlist,
         "is_owner": is_owner,
         # "comments": comments
     }
