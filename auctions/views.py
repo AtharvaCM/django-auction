@@ -235,5 +235,14 @@ def new_bid(request, listing_id):
         return render(request, "auctions/listing_page.html", context)
 
 
-def close_auction(request):
-    pass
+def close_auction(request, listing_id):
+    listing = Listing.objects.get(pk=listing_id)
+    listing.is_closed = True
+    listing.save()
+    template_name = 'auctions/listing_page.html'
+    # message
+    context = {
+
+    }
+    # return HttpResponseRedirect(reverse("display_listing", args=(listing_id, )))
+    return render(request, template_name, context)
