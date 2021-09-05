@@ -10,7 +10,7 @@ class MyUserAdmin(admin.ModelAdmin):
 
 
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_closed', 'category', 'bid')
+    list_display = ('title', 'owner', 'is_closed', 'category', 'bid')
 
 
 class BidAdmin(admin.ModelAdmin):
