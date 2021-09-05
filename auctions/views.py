@@ -94,7 +94,9 @@ def register(request):
 
 
 def profile(request):
-    pass
+    template_name = 'auctions/profile.html'
+    context = {}
+    return render(request, template_name, context)
 # ------------------------------------------------------------------------------------------------------------------
 
 
