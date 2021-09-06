@@ -4,10 +4,10 @@
 <!-- <h1>index page</h1> -->
 <!-- <a href="{% url 'display_category' %}">View Listings</a> -->
 
-<div class="container mt-4  " style="overflow: hidden;">
+<div class="container mt-4 display-wrapper  " style="overflow: hidden;">
     <div class="row">
-        <div class="col-6">
-            <h2 id="title" style="color: rgb(34, 25, 197);">Ongoing Auctions </h2>
+        <div class="col-6 text-center">
+            <h2 id="title">Active Listings</h2>
         </div>
         <div class="col-6">
             <form class="float-right mt-3" action="{% url 'display_category' %}" method="post">
