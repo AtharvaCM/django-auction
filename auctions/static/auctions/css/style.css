@@ -36,7 +36,7 @@ h6 {
 }
 
 .custom-navbar input {
-  border-color: #5cb85c;
+  border-color: #8d8a8a;
 }
 
 @media only screen and (max-width: 570px) {
@@ -112,8 +112,7 @@ input[type="number"] {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -155,12 +154,12 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -200,7 +199,7 @@ input[type="number"] {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -382,9 +381,11 @@ input.empty:focus {
 }
 
 /* ----------------------------------------------------------------------------------------- */
-/* active-listing-sec */
-#active-listing-sec h5 {
-  color: #805b11;
+/* active-listing-sec #0275d8 */
+.card-title {
+  color: black;
+  font-size: x-large;
+  font-weight: 600;
 }
 
 #active-listing-sec .card-img-top {
@@ -404,9 +405,14 @@ input.empty:focus {
   background: #ffc85a;
 } */
 
-#active-listing-sec .view-more-btn {
-  height: 40px;
-  width: 15%;
+#active-listing-sec .view-more-link {
+  color: #0275d8;
+  font-size: large;
+  /* transition: all ease-in 5s; */
+}
+
+#active-listing-sec .view-more-link:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -474,9 +480,9 @@ input.empty:focus {
   padding-top: 0%;
 }
 
-.wrapper-about .title-welcome {
+#title {
   text-align: center;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Klee One", cursive;
   font-weight: 400;
   font-size: 50px;
   padding-top: 0px;
@@ -517,11 +523,9 @@ input.empty:focus {
 /* ----------------------------------------------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
