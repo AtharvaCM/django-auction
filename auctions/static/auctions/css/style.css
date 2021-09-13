@@ -112,7 +112,8 @@ input[type="number"] {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center
+    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -154,12 +155,12 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group>input,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -199,7 +200,7 @@ input[type="number"] {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -408,11 +409,12 @@ input.empty:focus {
 #active-listing-sec .view-more-link {
   color: #0275d8;
   font-size: large;
-  /* transition: all ease-in 5s; */
+  transition: all 200ms ease-in;
 }
 
 #active-listing-sec .view-more-link:hover {
   text-decoration: underline;
+  color: #065eac;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -488,8 +490,12 @@ input.empty:focus {
   padding-top: 0px;
 }
 
-/* ----------------------------------------------------------------------------------------- */
-/* terms page */
+/* ------------------------------------Watchlist page----------------------------------------------------- */
+.watchlist-wrapper {
+  min-height: calc(100vh - 252.5px);
+}
+
+/* --------------------------------------Terms Page--------------------------------------------------- */
 
 .terms-wrapper {
   color: white;
@@ -520,12 +526,61 @@ input.empty:focus {
   font-size: larger;
 }
 
-/* ----------------------------------------------------------------------------------------- */
+/* -------------------------------------Profile Page---------------------------------------------------- */
+
+.profile-wrapper {
+  background-color: rgb(128, 129, 255);
+}
+
+.profile-wrapper .form-control:focus {
+  box-shadow: none;
+  border-color: #ba68c8;
+}
+
+.profile-button {
+  background: rgb(108, 99, 255);
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: rgb(128, 129, 255);
+}
+
+.profile-button:focus {
+  background: #682773;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #682773;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
+}
+
+.labels {
+  font-size: 18px;
+}
+
+.add-experience:hover {
+  background: #ba68c8;
+  color: #fff;
+  cursor: pointer;
+  border: solid 1px #ba68c8;
+}
+
+/* ----------------------------------------Footer------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(to bottom right,
-      rgb(21, 20, 20) 40%,
-      rgb(101, 100, 100));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 20, 20) 40%,
+    rgb(101, 100, 100)
+  );
   padding-bottom: 1px;
   color: antiquewhite;
 }

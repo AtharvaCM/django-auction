@@ -5,23 +5,22 @@
 <!-- <a href="{% url 'display_category' %}">View Listings</a> -->
 
 <div class="container mt-4 display-wrapper  " style="overflow: hidden;">
-    <div class="row">
-        <div class="col-6 text-center">
-            <h2 id="title">Active Listings</h2>
-        </div>
-        <div class="col-6">
-            <form class="float-right mt-3" action="{% url 'display_category' %}" method="post">
-                {% csrf_token %}
-                <select name="category" class="form-select btn btn-outline-dark" aria-label="Default select example">
-                    <option selected><a href="#">All Categories</a></option>
-                    {% for category in all_listings %}
-                    <option value="{{ category }}">{{ category }}</option>
-                    {% endfor %}
-                </select>
-                <input class="btn btn-outline-dark" type="submit" value="Submit">
-            </form>
-        </div>
+    <div class="text-center">
+        <h2 id="title">Active Listings</h2>
     </div>
+    <div class="ml-auto">
+        <form class="float-right mt-3" action="{% url 'display_category' %}" method="POST">
+            {% csrf_token %}
+            <select name="category" class="form-select btn btn-outline-dark" aria-label="Default select example">
+                <option selected><a href="#">All Categories</a></option>
+                {% for category in all_listings %}
+                <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+            <input class="btn btn-outline-dark" type="submit" value="Submit">
+        </form>
+    </div>
+
     <div class="text-center">
         <div class="row" style="width:100%;">
             {% for listing in listings %}
