@@ -501,7 +501,7 @@ input.empty:focus {
   padding-top: 0%;
 }
 
-#title {
+.text-title {
   text-align: center;
   font-family: "Klee One", cursive;
   font-weight: 400;

@@ -6,13 +6,15 @@
 
 <div class="container mt-4 display-wrapper  " style="overflow: hidden;">
     <div class="text-center">
-        <h2 id="title">Active Listings</h2>
+        <h2 class="text-title">Active Listings</h2>
     </div>
     <div class="ml-auto">
         <form class="float-right mt-3" action="{% url 'display_category' %}" method="POST">
             {% csrf_token %}
             <select name="category" class="form-select btn btn-outline-dark" aria-label="Default select example">
-                <option selected><a href="#">All Categories</a></option>
+                <option selected>
+                    <a href="#">All Categories</a>
+                </option>
                 {% for category in all_listings %}
                 <option value="{{ category }}">{{ category }}</option>
                 {% endfor %}
@@ -29,7 +31,7 @@
                     <div class="card-header">
                         <p id="bid">Current bid: <span id="price">{{ listing.bid }}</span></p>
                     </div>
-                    <img class="card-img" src="{{ listing.url }}" alt="Card image" height="300px">
+                    <img class="card-img" src="{{ listing.url }}" alt="Card image" height="300">
                     <div class=" card-body text-center">
                         <h5 class="card-title">{{ listing.title}}</h5>
                         <p class="card-text">{{ listing.description }}</p>

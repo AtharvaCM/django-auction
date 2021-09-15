@@ -177,7 +177,7 @@ def display_category(request):
     if category == 'All Categories':
         listings = Listing.objects.filter(is_closed=False)
     else:
-        listings = Listing.objects.filter(category=category)
+        listings = Listing.objects.filter(category=category, is_closed=False)
 
     listings = set(listings)
     context = {
