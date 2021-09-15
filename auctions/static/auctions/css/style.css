@@ -112,8 +112,7 @@ input[type="number"] {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -156,13 +155,13 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > select,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>select,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -206,7 +205,7 @@ input[type="number"] {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -259,6 +258,7 @@ input.empty:focus {
   .non-mobile {
     display: none;
   }
+
   .form-signin .mobile {
     display: block;
   }
@@ -571,6 +571,7 @@ input.empty:focus {
   padding: 0 !important;
   overflow: hidden;
 }
+
 .profile-wrapper .edit-profile.active,
 .profile-wrapper .my-profile.active {
   opacity: 1;
@@ -655,14 +656,37 @@ input.empty:focus {
   border-radius: 1rem;
 }
 
+/* -------------------------------------Enquiry page---------------------------------------------------- */
+
+.feedback {
+  margin: 100px;
+}
+
+.btn {
+  margin-left: 500px;
+}
+
+.text-title {
+  margin-left: 450px;
+}
+
+.text-area {
+  border-color: black;
+  margin-left: 150px;
+  width: 900px;
+  height: 200px !important;
+}
+
+.feedback .text-area::placeholder {
+  font-size: 20px;
+}
+
 /* ----------------------------------------Footer------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
