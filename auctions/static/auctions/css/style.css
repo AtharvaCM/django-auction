@@ -528,41 +528,52 @@ input.empty:focus {
   background-color: rgb(128, 129, 255);
 }
 
+.profile-wrapper .profile-label {
+  font-size: large;
+  font-weight: bold;
+}
+
+.profile-wrapper .profile-text {
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
+
 .profile-wrapper .form-control:focus {
   box-shadow: none;
   border-color: #ba68c8;
 }
 
-.profile-button {
+.profile-wrapper .profile-button {
   background: rgb(108, 99, 255);
   box-shadow: none;
   border: none;
 }
 
-.profile-button:hover {
+.profile-wrapper .profile-button:hover {
   background: rgb(128, 129, 255);
 }
 
-.profile-button:focus {
+.profile-wrapper .profile-button:focus {
   background: #682773;
   box-shadow: none;
 }
 
-.profile-button:active {
+.profile-wrapper .profile-button:active {
   background: #682773;
   box-shadow: none;
 }
 
-.back:hover {
+.profile-wrapper .back:hover {
   color: #682773;
   cursor: pointer;
 }
 
-.labels {
+.profile-wrapper .labels {
   font-size: 18px;
 }
 
-.add-experience:hover {
+.profile-wrapper .add-experience:hover {
   background: #ba68c8;
   color: #fff;
   cursor: pointer;
