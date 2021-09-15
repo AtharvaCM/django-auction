@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Listing, User, Bid
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.db import IntegrityError
 from django.urls import reverse
 from django.views.generic import ListView
@@ -131,8 +131,49 @@ def terms(request):
 
 def profile(request):
     template_name = 'auctions/profile.html'
-    context = {}
+    user = request.user
+    context = {
+        'user': user,
+    }
     return render(request, template_name, context)
+
+
+def update_profile(request, pk):
+    if request.user.is_authenticated:
+        template_name = 'auctions/profile.html'
+
+        if request.method == 'POST':
+            first_name = request.POST['fname']
+            last_name = request.POST['lname']
+            email = request.POST['email']
+            phone = request.POST['phone']
+            address = request.POST['address']
+            age = request.POST['age']
+
+        print(first_name, last_name, email, phone, address, age)
+        # attempt to update user
+        try:
+            user = User.objects.get(pk=pk)
+            user.first_name = first_name
+            user.last_name = last_name
+            user.email = email
+            user.phone = phone
+            user.address = address
+            user.age = age
+            user.save()
+            context = {
+                'message_success': 'Profile updated successfully',
+                'user': user,
+            }
+        except:
+            context = {
+                'message_danger': 'Cannot update profile',
+                'user': user,
+            }
+
+        return render(request, template_name, context)
+    else:
+        return redirect('login')
 
 
 def display_watchlist(request):

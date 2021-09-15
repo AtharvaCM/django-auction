@@ -553,17 +553,32 @@ input.empty:focus {
   transition: all 2s ease;
 }
 
+.profile-wrapper .left-div {
+  border-right: 1px solid black;
+}
+
+@media (max-width: 766px) {
+  .profile-wrapper .left-div {
+    border-right: none;
+  }
+}
+
 .profile-wrapper .edit-profile,
 .profile-wrapper .my-profile {
   transition: opacity 1s ease-out;
   opacity: 0;
   height: 0;
+  padding: 0 !important;
   overflow: hidden;
 }
 .profile-wrapper .edit-profile.active,
 .profile-wrapper .my-profile.active {
   opacity: 1;
   height: auto;
+  /* padding-top: 3rem !important; */
+  padding-bottom: 3rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 .profile-wrapper .profile-label {

@@ -16,6 +16,7 @@ urlpatterns = [
     path('terms', views.terms, name='terms'),
 
     path('profile', views.profile, name='profile'),
+    path('profile/<int:pk>', views.update_profile, name='update_profile'),
     path("display_watchlist", views.display_watchlist, name="display_watchlist"),
     path("<int:listing_id>/add_watchlist",
          views.add_watchlist, name="add_watchlist"),
