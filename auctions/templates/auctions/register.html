@@ -42,13 +42,26 @@
                                 <label for="inputAge">Age</label>
                             </div>
 
-                            <div class="form-label-group">
-                                <select name="gender" id="inputGender" class="form-control">
-                                    <option value="O" selected>Other</option>
+                            <div class="form-label-group non-mobile">
+                                <input type="text" id="dummy" class="form-control" />
+                                <label for="email">
+                                    <h6>Gender :
+                                        <span class="ml-3"> Male <input type="radio" name="gender" value="M"></span>
+                                        <span class="ml-1"> Female <input type="radio" name="gender" value="F"></span>
+                                        <span class="ml-1"> Other <input type="radio" name="gender" value="O">
+                                        </span>
+
+                                    </h6>
+                                </label>
+                            </div>
+                            <div class="form-label-group mobile">
+                                <select name="gender" id="inputGender" class="form-control" required>
+                                    <option value="" disabled selected hidden>Gender</option>
+                                    <option value="O">Other</option>
                                     <option value="M">Male</option>
                                     <option value="F">Female</option>
                                 </select>
-                                <!-- <label for="inputAge">Gender</label> -->
+                                <!-- <label for="inputGender">Gender</label> -->
                             </div>
 
                             <div class="form-label-group">

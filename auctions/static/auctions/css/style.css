@@ -177,6 +177,10 @@ input[type="number"] {
   transition: all 0.1s ease-in-out;
 }
 
+.form-label-group h6 {
+  color: #495057;
+}
+
 .form-label-group input::-webkit-input-placeholder {
   color: transparent;
 }
@@ -241,6 +245,23 @@ input.empty::placeholder {
 input.empty:focus {
   background-color: transparent;
   color: rgb(2, 1, 0);
+}
+
+.form-signin .mobile {
+  display: none;
+}
+
+.form-signin .mobile select:invalid {
+  color: #495057;
+}
+
+@media (max-width: 500px) {
+  .non-mobile {
+    display: none;
+  }
+  .form-signin .mobile {
+    display: block;
+  }
 }
 
 /* ----------------------------------------------------------------------------------------- */
@@ -527,7 +548,22 @@ input.empty:focus {
 /* -------------------------------------Profile Page---------------------------------------------------- */
 
 .profile-wrapper {
-  background-color: rgb(128, 129, 255);
+  /* background-color: rgb(128, 129, 255); */
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 2s ease;
+}
+
+.profile-wrapper .edit-profile,
+.profile-wrapper .my-profile {
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+.profile-wrapper .edit-profile.active,
+.profile-wrapper .my-profile.active {
+  opacity: 1;
+  height: auto;
 }
 
 .profile-wrapper .profile-label {
@@ -538,7 +574,18 @@ input.empty:focus {
 .profile-wrapper .profile-text {
   font-size: large;
   font-weight: bold;
-  color: white;
+  color: #0275d8;
+}
+
+.profile-wrapper hr {
+  border-color: black;
+}
+
+.profile-wrapper .edit-btn,
+.cancel-btn,
+.submit-btn {
+  font-size: 2em;
+  width: 2em;
 }
 
 .profile-wrapper .form-control:focus {
