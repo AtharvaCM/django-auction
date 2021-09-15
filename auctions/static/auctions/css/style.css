@@ -149,13 +149,15 @@ input[type="number"] {
   margin-bottom: 1rem;
 }
 
-.form-label-group input {
+.form-label-group input,
+.form-label-group select {
   height: auto;
   border-radius: 2rem;
   background: rgba(255, 255, 255, 0.8);
 }
 
 .form-label-group > input,
+.form-label-group > select,
 .form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }

@@ -12,6 +12,17 @@ def age_validator(age):
         )
 
 
+GENDER_MALE = 'M'
+GENDER_FEMALE = 'F'
+GENDER_NOT_SPECIFIED = 'O'
+
+GENDER_CHOICES = (
+    (GENDER_MALE, _('male')),
+    (GENDER_FEMALE, _('female')),
+    (GENDER_NOT_SPECIFIED, _('not specified')),
+)
+
+
 class User(AbstractUser):
     name = models.CharField(max_length=100, default='username')
     phone_regex = RegexValidator(
@@ -20,6 +31,8 @@ class User(AbstractUser):
         validators=[phone_regex], max_length=17, blank=True)  # validators should be a list
     address = models.CharField(max_length=100, default='')
     age = models.IntegerField(validators=[age_validator])
+    gender = models.CharField(max_length=1,
+                              choices=GENDER_CHOICES, default=GENDER_NOT_SPECIFIED)
 
 
 class Bid(models.Model):

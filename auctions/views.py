@@ -63,6 +63,7 @@ def register(request):
             last_name = request.POST['lname']
             email = request.POST['email']
             phone = request.POST['phone']
+            gender = request.POST['gender']
             address = request.POST['address']
             age = request.POST['age']
 
@@ -74,12 +75,12 @@ def register(request):
                     'message': 'Passwords must match!'
                 })
 
-            print(first_name, last_name, phone, address, age)
+            print(first_name, last_name, phone, gender, address, age)
 
             # Attempt to create new user
             try:
                 user = User.objects.create_user(
-                    username, email, password, first_name=first_name, last_name=last_name, phone=phone, address=address, age=age)
+                    username, email, password, first_name=first_name, last_name=last_name, phone=phone, gender=gender, address=address, age=age)
                 print('create user called')
                 user.save()
             except IntegrityError:
