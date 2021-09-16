@@ -150,27 +150,26 @@ def update_profile(request, pk):
             address = request.POST['address']
             age = request.POST['age']
 
-        print(first_name, last_name, email, phone, address, age)
-        # attempt to update user
-        try:
-            user = User.objects.get(pk=pk)
-            user.first_name = first_name
-            user.last_name = last_name
-            user.email = email
-            user.phone = phone
-            user.address = address
-            user.age = age
-            user.save()
-            context = {
-                'message_success': 'Profile updated successfully',
-                'user': user,
-            }
-        except:
-            context = {
-                'message_danger': 'Cannot update profile',
-                'user': user,
-            }
-
+            print(first_name, last_name, email, phone, address, age)
+            # attempt to update user
+            try:
+                user = User.objects.get(pk=pk)
+                user.first_name = first_name
+                user.last_name = last_name
+                user.email = email
+                user.phone = phone
+                user.address = address
+                user.age = age
+                user.save()
+                context = {
+                    'message_success': 'Profile updated successfully',
+                    'user': user,
+                }
+            except:
+                context = {
+                    'message_danger': 'Cannot update profile',
+                    'user': user,
+                }
         return render(request, template_name, context)
     else:
         return redirect('login')

@@ -61,15 +61,21 @@
                         Search</button>
                 </form>
                 <ul class="navbar-nav ml-auto" style="font-size: 18px;">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'index' %}">Home </a>
+                    {% url 'index' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
+                        <a class="nav-link" href="{{ url }}">Home </a>
                     </li>
-                    <li class="nav-item">
+                    {% url 'about' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
+                    {% url 'create_listing' as url1 %}
+                    {% url 'display_category' as url2 %}
+                    {% url 'closed_listings' as url3 %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle {% if request.path == url1 or request.path == url2 or request.path == url3 %}active{% endif %}"
+                            href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             Auctions
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -95,10 +101,12 @@
                         </div>
                     </li>
                     {% else %}
-                    <li class="nav-item">
+                    {% url 'register' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
                         <a class="nav-link" aria-current="page" href="{% url 'register' %}">Signup</a>
                     </li>
-                    <li class="nav-item">
+                    {% url 'login' as url %}
+                    <li class="nav-item {% if request.path == url %}active{% endif %}">
                         <a class="nav-link" aria-current="page" href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif %}
