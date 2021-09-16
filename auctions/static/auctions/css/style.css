@@ -489,13 +489,15 @@ input.empty:focus {
 
 .wrapper-about p {
   text-indent: 50px;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-  letter-spacing: 2px;
+  /* font-family: "Times New Roman", Times, serif; */
+  font-size: 25px;
+  letter-spacing: 1px;
   line-height: 1.5;
+  font-weight: 300;
 }
 
 .wrapper-about h4 {
+  font-family: "Klee One", cursive;
   text-align: center;
   margin-top: 0%;
   margin-bottom: 50px;
@@ -524,6 +526,7 @@ input.empty:focus {
   background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("../img/main-img.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 @media (max-width: 400px) {
@@ -675,7 +678,6 @@ input.empty:focus {
 }
 
 .feedback .btn {
-  margin-left: 500px;
   margin-top: 50px !important;
   margin-bottom: 50px;
 }
@@ -683,13 +685,11 @@ input.empty:focus {
 .feedback .text-title {
   margin-top: 30px;
   margin-bottom: 50px;
-  margin-left: 450px;
 }
 
-.text-area {
+.feedback .text-area {
   border-color: black;
-  margin-left: 150px;
-  width: 900px;
+  width: 80vw;
   height: 200px !important;
 }
 
