@@ -201,7 +201,7 @@ def remove_watchlist(request, listing_id):
 
 
 def display_category(request):
-    all_listings = Listing.objects.order_by().values_list(
+    all_listings = Listing.objects.filter(is_closed=False).order_by().values_list(
         'category', flat=True).distinct()
     print(all_listings)
 
