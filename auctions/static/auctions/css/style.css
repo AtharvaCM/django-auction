@@ -490,10 +490,12 @@ input.empty:focus {
 .wrapper-about p {
   text-indent: 50px;
   /* font-family: "Times New Roman", Times, serif; */
-  font-size: 25px;
+  /* font-size: 25px; */
   letter-spacing: 1px;
   line-height: 1.5;
   font-weight: 300;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .wrapper-about h4 {
@@ -508,8 +510,19 @@ input.empty:focus {
   text-align: center;
   font-family: "Klee One", cursive;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 4em;
+  line-height: 1;
   padding-top: 0px;
+  margin-bottom: 1rem;
+}
+@media (max-width: 700px) {
+  .text-title {
+    font-size: 3em;
+  }
+}
+
+.text-responsive {
+  font-size: calc(100% + 1vw + 1vh);
 }
 
 /* ------------------------------------Watchlist page----------------------------------------------------- */
