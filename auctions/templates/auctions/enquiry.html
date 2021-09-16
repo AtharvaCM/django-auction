@@ -6,16 +6,18 @@ About | eAuction Pune
 
 {% block body %}
 
-<div>
-  <form class="feedback">
-    <div class="mb-3 text-center">
-      <label for="validationTextarea" class="form-label text-title">Feedback Request</label>
-      <textarea class="form-control text-area mx-auto" id="validationTextarea" placeholder="Enter your feedback"
-        required>
+<div class="feedback-wrapper">
+  <div class="container my-5">
+    <form>
+      <div class="mb-3 text-center">
+        <label for="validationTextarea" class="form-label text-title my-4">Feedback Request</label>
+        <textarea class="form-control text-area mx-auto" id="validationTextarea" placeholder="Enter your feedback"
+          required>
       </textarea>
-      <button class="btn btn-lg btn-primary mt-4" type="submit">Submit</button>
-    </div>
-  </form>
+        <button class="btn btn-lg btn-primary my-4" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 {% endblock %}

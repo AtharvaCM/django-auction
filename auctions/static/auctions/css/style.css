@@ -684,29 +684,17 @@ input.empty:focus {
 
 /* -------------------------------------Enquiry page---------------------------------------------------- */
 
-.feedback {
+.feedback-wrapper .container {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
-  margin: 100px;
 }
 
-.feedback .btn {
-  margin-top: 50px !important;
-  margin-bottom: 50px;
-}
-
-.feedback .text-title {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-.feedback .text-area {
+.feedback-wrapper .text-area {
   border-color: black;
-  width: 80vw;
   height: 200px !important;
 }
 
-.feedback .text-area::placeholder {
+.feedback-wrapper .text-area::placeholder {
   font-size: 20px;
 }
 

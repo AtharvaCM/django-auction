@@ -12,7 +12,6 @@
 
             <div class="col-lg-5 mx-auto">
                 <div class="card card-signin flex-row my-5">
-
                     <div class="card-body">
                         <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
                         <h5 class="card-title text-center mb-0">Login Form</h5>
@@ -20,20 +19,11 @@
                         <hr style="height:1px; border-width:0; color:rgb(0, 0, 0); background-color:rgb(8, 0, 0); ">
                         <form class="form-signin" method="POST">
                             {% csrf_token %}
-                            <!-- <i class="w3-xxlarge"></i> Home</i> -->
-
                             <div class="form-label-group">
                                 <input type="text" name="username" id="inputUserame" class="form-control"
                                     placeholder="Username" required autofocus>
                                 <label for="inputUserame">Username</label>
                             </div>
-
-                            <!-- <div class="form-label-group">
-                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
-                                required>
-                            <label for="inputEmail">Email address</label>
-                        </div> -->
-
                             <div class="form-label-group">
                                 <input type="password" name="password" id="inputPassword" class="form-control"
                                     placeholder="Password" required>
