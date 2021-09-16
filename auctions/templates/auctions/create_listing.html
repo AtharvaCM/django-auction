@@ -4,7 +4,7 @@
 
 {% block body %}
 <section id="create-listing-sec">
-    <div class="container w-50">
+    <div class="container">
         <h2 class="text-title text-center pt-2 mb-5">Create New Listing</h2>
 
         {% if message_success %}
@@ -20,7 +20,7 @@
         {% endif %}
 
         <div class="create-list">
-            <form class="mb-5 p-5" action="{% url 'create_listing'%}" method="POST">
+            <form class="mb-5 p-sm-5 p-3" action="{% url 'create_listing'%}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="inputTitle">Title</label>
@@ -45,7 +45,9 @@
                     <input type="text" name="image_url" class="form-control" id="inputImage"
                         value="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg">
                 </div>
-                <button class="btn btn-primary mb-3" type="submit">Submit</button>
+                <div class="text-center">
+                    <button class="btn btn-primary mb-2" type="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>
