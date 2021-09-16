@@ -58,7 +58,9 @@
             <h1>{{listing.title }}</h1>
             <img src="{{ listing.url }}" class="img-fluid" alt="Listing picture"><br><br>
             <p> {{ listing.description }} </p>
-            <p id="bid">Current bid: <span id="price">{{ listing.bid }}</span></p>
+            <p id="bid">Current bid: <span class="bid-user">{{ listing.bid.user }}</span> -
+                <span class="price">${{ listing.bid.bid }}</span>
+            </p>
             {% if is_listing_in_watchlist%}
             <a class="btn btn-danger" href="{% url 'remove_watchlist' listing.id %}"> Remove from watchlist </a>
             {% else %}
