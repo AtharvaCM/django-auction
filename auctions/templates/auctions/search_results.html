@@ -1,13 +1,17 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
-<h1>Search Results</h1>
+<div>
+    <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
 
-<ul>
-    {% for listing in object_list %}
-    <li>
-        {{ listing.title }}, {{ listing.category }}
-    </li>
-    {% endfor %}
-</ul>
+    <h1 class="text-center">Search Results</h1>
+
+    <ul>
+        {% for listing in object_list %}
+        <li>
+            {{ listing.title }}, {{ listing.category }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

@@ -25,7 +25,7 @@
 
     {% if listing.is_closed and user != listing.bid.user %}
     <div class="alert alert-primary" role="alert">
-        {{ listing.bid.user }}, won the Auction! for RS. {{ listing.bid.bid }}
+        {{ listing.bid.user }}, won the Auction for $ {{ listing.bid.bid }} !
     </div>
     {% endif %}
 
