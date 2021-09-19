@@ -53,6 +53,7 @@ def logout_view(request):
 
 
 def register(request):
+    template_name = 'auctions/register.html'
     if request.user.is_authenticated:
         # redirect to homepage
         return redirect('index')
@@ -65,14 +66,20 @@ def register(request):
             phone = request.POST['phone']
             gender = request.POST['gender']
             address = request.POST['address']
-            age = request.POST['age']
+            age = int(request.POST['age'])
+
+            # validate age
+            if age < 21:
+                return render(request, template_name, {
+                    'message_danger': 'Invalid Age, must be greater than 21!'
+                })
 
             # Ensure password matches confirmation
             password = request.POST['password']
             confirmation = request.POST['confirmation']
             if password != confirmation:
-                return render(request, 'auctions/register.html', {
-                    'message': 'Passwords must match!'
+                return render(request, template_name, {
+                    'message_danger': 'Passwords must match!'
                 })
 
             print(first_name, last_name, phone, gender, address, age)
@@ -84,14 +91,18 @@ def register(request):
                 print('create user called')
                 user.save()
             except IntegrityError:
-                return render(request, 'auctions/register.html', {
-                    'message': 'Username already exists'
+                return render(request, template_name, {
+                    'message_danger': 'Username already exists'
                 })
             login(request, user)
             return HttpResponseRedirect(reverse('index'))
         else:
-            print('nahi hote rav')
-            return render(request, 'auctions/register.html')
+            print('POST req nahiye')
+            return render(request, template_name)
+
+
+def reset_password(request):
+    pass
 # ------------------------------------------------------------------------------------------------------------------
 
 

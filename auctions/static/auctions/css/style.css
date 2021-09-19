@@ -13,12 +13,8 @@ body {
   animation: ease-in-out 1500ms;
 }
 
-a {
-  color: rgb(43, 26, 4);
-}
-
 a:hover {
-  color: rgb(88, 44, 2);
+  color: rgb(128, 129, 255);
   text-decoration: none;
 }
 
@@ -107,6 +103,13 @@ input[type="number"] {
   font-weight: 600;
   font-size: x-large;
   color: rgb(108, 99, 255);
+}
+
+.card-signin hr {
+  height: 1px;
+  border-width: 0;
+  color: white;
+  background-color: rgb(0, 0, 0);
 }
 
 .card-signin .card-img-left {
