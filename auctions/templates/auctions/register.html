@@ -87,7 +87,14 @@
                                 <label for="inputConfirmPassword">Confirm password</label>
                             </div>
 
-                            <button class="btn btn-lg btn-primary btn-block text-uppercase"
+                            <div class="form-check ml-3">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1" required>
+                                <label class="form-check-label" for="gridCheck1">
+                                    <a href="{% url 'terms' %}"> I Agree to Terms and Conditions</a><sup>*</sup>
+                                </label>
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase mt-3"
                                 type="submit">Register</button>
                             <a class="d-block text-center mt-4" href="{% url 'login' %}">Already have an account?
                                 Login</a>
