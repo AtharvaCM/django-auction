@@ -294,7 +294,7 @@ def new_bid(request, listing_id):
         listing.save()
         context = {
             "listing": listing,
-            "message": "Bid was updated successfully",
+            "message": "Bid Updated Successfully!",
             "updated": True,
         }
         print('---------', listing.url)
@@ -302,8 +302,8 @@ def new_bid(request, listing_id):
     else:
         context = {
             "listing": listing,
-            "message": "Bid was updated successfully",
-            "updated": True,
+            "message": "Error - Bid is too low",
+            "updated": False,
         }
         return render(request, "auctions/listing_page.html", context)
 

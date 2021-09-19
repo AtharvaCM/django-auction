@@ -1,17 +1,39 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
-<div>
-    <a class="w3-xlarge" href="{% url 'index' %}"><i class="fa fa-home"></i></a>
-
-    <h1 class="text-center">Search Results</h1>
-
-    <ul>
-        {% for listing in object_list %}
-        <li>
-            {{ listing.title }}, {{ listing.category }}
-        </li>
-        {% endfor %}
-    </ul>
+<div class="search-wrapper">
+    <div class="container mt-4">
+        <div class="back-link mb-3">
+            <a href="{% url 'index' %}" class="text-primary">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i> Go to Home
+            </a>
+        </div>
+        <div class="mb-5">
+            <div class="text-center">
+                <h2 class="text-title">Search Results</h2>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="row" style="width:100%;">
+                {% for listing in object_list %}
+                <div class="col-sm-12 col-lg-4 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <p id="bid">Current bid: <span class="bid-user">{{ listing.bid.user }}</span> -
+                                <span class="price">${{ listing.bid.bid }}</span>
+                            </p>
+                        </div>
+                        <img class="card-img" src="{{ listing.url }}" alt="Card image" height="300">
+                        <div class=" card-body text-center">
+                            <h5 class="card-title">{{ listing.title}}</h5>
+                            <p class="card-text">{{ listing.description }}</p>
+                        </div>
+                        <a href="{% url 'display_listing' listing.id %}" class="btn btn-info mb-2">View Details</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

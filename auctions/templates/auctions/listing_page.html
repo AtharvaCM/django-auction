@@ -69,18 +69,18 @@
         </div>
 
         {% if user.is_authenticated and not listing.is_closed%}
-        <form action="{% url 'new_bid' listing.id%}" method="post" class="text-center">
+        <form action="{% url 'new_bid' listing.id%}" method="post" class="text-center mt-4">
             {% csrf_token %}
-            <label>New Bid:</label>
+            <!-- <label class="font-weight-bold">New Bid:</label> -->
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="row">
-                        <div class="col-lg-6 ml-auto">
-                            <input type="text" name="bid" class="form-control" id="exampleFormControlInput1"
+                        <div class="col-lg-6 ml-auto p-0 px-lg-3">
+                            <input type="text" name="bid" class="form-control border-dark" id="exampleFormControlInput1"
                                 style="width:100%">
                         </div>
-                        <div class="col-lg-3 mt-3 mt-lg-0 mr-auto">
-                            <button id="bid-button" class="btn btn-outline-primary" type="submit">Make a new
+                        <div class="col-lg-2 mt-3 mt-lg-0 mr-auto p-0">
+                            <button id="bid-button" class="btn btn-outline-primary m-0 w-100" type="submit">Place new
                                 bid</button>
                         </div>
                     </div>
