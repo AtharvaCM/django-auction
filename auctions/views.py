@@ -187,12 +187,15 @@ def update_profile(request, pk):
 
 
 def display_watchlist(request):
-    user = request.user
-    listings = user.watch_listings.all()
-    context = {
-        "listings": listings,
-    }
-    return render(request, "auctions/watchlist_page.html", context)
+    if request.user.is_authenticated:
+        user = request.user
+        listings = user.watch_listings.all()
+        context = {
+            "listings": listings,
+        }
+        return render(request, "auctions/watchlist_page.html", context)
+    else:
+        return redirect('login')
 
 
 def add_watchlist(request, listing_id):
@@ -261,36 +264,39 @@ def closed_listings(request):
 
 
 def create_listing(request):
-    template_name = 'auctions/create_listing.html'
-    if request.method == "POST":
-        user = request.user
-        title = request.POST["title"]
-        description = request.POST["description"]
-        image_url = request.POST["image_url"]
-        category = request.POST['category']
+    if request.user.is_authenticated:
+        template_name = 'auctions/create_listing.html'
+        if request.method == "POST":
+            user = request.user
+            title = request.POST["title"]
+            description = request.POST["description"]
+            image_url = request.POST["image_url"]
+            category = request.POST['category']
 
-        try:
-            # Create new bid
-            bid = Bid(bid=int(request.POST["bid"]), user=user)
-            bid.save()
+            try:
+                # Create new bid
+                bid = Bid(bid=int(request.POST["bid"]), user=user)
+                bid.save()
 
-            # Create new listing
-            listing = Listing(title=title, category=category, owner=user,
-                              is_closed=False, description=description, bid=bid, url=image_url)
-            listing.save()
-            message_success = 'Successfully created listing'
-            context = {
-                'message_success': message_success,
-            }
-        except:
-            message_danger = 'Cannot create listing!'
-            context = {
-                'message_danger': message_danger,
-            }
-        # return HttpResponseRedirect(reverse("index"))
-        return render(request, template_name, context)
+                # Create new listing
+                listing = Listing(title=title, category=category, owner=user,
+                                is_closed=False, description=description, bid=bid, url=image_url)
+                listing.save()
+                message_success = 'Successfully created listing'
+                context = {
+                    'message_success': message_success,
+                }
+            except:
+                message_danger = 'Cannot create listing!'
+                context = {
+                    'message_danger': message_danger,
+                }
+            # return HttpResponseRedirect(reverse("index"))
+            return render(request, template_name, context)
+        else:
+            return render(request, template_name)
     else:
-        return render(request, template_name)
+        return redirect('login')
 
 
 def new_bid(request, listing_id):

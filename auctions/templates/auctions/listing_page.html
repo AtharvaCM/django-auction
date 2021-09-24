@@ -3,19 +3,6 @@
 {% block title %}Active Listing | eAuction Pune{% endblock %}
 
 {% block body %}
-
-<!-- <h1>Listing Page</h1> -->
-<!-- <div class="wrapper-detail container">
-    <div class="card">
-        <img style="height: 100vh; width: auto" class="card-img-top" src="{{listing.url}}" alt="Car Image" />
-        <div class="card-body">
-            <h4 class="card-title">{{listing.title}}</h4>
-            <p class="card-text">{{listing.description}}</p>
-            <p>{{listing.bid}}</p>
-        </div>
-    </div>
-</div> -->
-
 <div class="container my-4">
     <div class="back-link mb-3">
         <a href="{% url 'display_category' %}" class="text-primary">
@@ -25,8 +12,8 @@
 
     {% if listing.is_closed and user != listing.bid.user %}
     <div class="alert alert-primary" role="alert">
-        <span class="bid-user">{{ listing.bid.user }}</span>, won the Auction for <span class="price">${{
-            listing.bid.bid }}!</span>
+        <span class="bid-user">{{ listing.bid.user }}</span>, won the Auction for
+        <span class="price">${{ listing.bid.bid }}!</span>
     </div>
     {% endif %}
 
@@ -57,16 +44,80 @@
         <div class="text-center">
             <div class="badge badge-pill badge-primary">{{ listing.category }}</div>
             <h1>{{listing.title }}</h1>
-            <img src="{{ listing.url }}" class="img-fluid" alt="Listing picture"><br><br>
+            {% if listing.is_closed and user == listing.bid.user %}
+            <div class="owner-info mb-3">
+                <button class="btn btn-outline-primary" type="button" data-toggle="modal"
+                    data-target="#ownerInfoModal">Show Owner Info</button>
+            </div>
+            {% endif %}
+            <div class="listing-img">
+                <img src="{{ listing.url }}" class="img-fluid" alt="Listing picture">
+            </div>
+            <br>
             <p> {{ listing.description }} </p>
             <p id="bid">Current bid: <span class="bid-user">{{ listing.bid.user }}</span> -
                 <span class="price">${{ listing.bid.bid }}</span>
             </p>
+            {% if user.is_authenticated %}
             {% if is_listing_in_watchlist%}
             <a class="btn btn-danger" href="{% url 'remove_watchlist' listing.id %}"> Remove from watchlist </a>
             {% else %}
             <a class="btn btn-success" href="{% url 'add_watchlist' listing.id %}"> Add to watchlist </a>
             {% endif %}
+            {% endif %}
+        </div>
+
+        <!-- Modal OwnerInfo -->
+        <div class="modal fade" id="ownerInfoModal" tabindex="-1" role="dialog" aria-labelledby="ownerInfoModalTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title font-weight-bolder" id="ownerInfoModalTitle">Listing's Owner Information
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row font-weight-bold">
+                            <div class="col-md-6">
+                                <span>Username: </span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="text-primary">{{ listing.owner }}</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row font-weight-bold">
+                            <div class="col-md-6">
+                                <span>Phone: </span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="text-primary">{{ listing.owner.phone }} </span>
+                                <a id="clipboardIcon" href="#" class="js-textareacopybtn" data-toggle="tooltip"
+                                    data-placement="top" title="Copied To Clipboard" data-trigger="manual"><i
+                                        class="fa fa-clipboard    "></i></a>
+                                <textarea class="js-copytextarea d-none">{{ listing.owner.phone }}</textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row  font-weight-bold">
+                            <div class="col-md-6">
+                                <span>Email: </span>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="text-primary">
+                                    <a href="mailto:{{ listing.owner.email }}">{{ listing.owner.email }}</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {% if user.is_authenticated and not listing.is_closed%}
@@ -91,5 +142,23 @@
         {% endif %}
     </div>
 </div>
+<script>
+    var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 
+    copyTextareaBtn.addEventListener('click', function (event) {
+        var copyTextarea = document.querySelector('.js-copytextarea');
+        copyTextarea.focus();
+        copyTextarea.select();
+
+        try {
+            navigator.clipboard.writeText(copyTextarea.value);
+            $('#clipboardIcon').tooltip('show');
+            setTimeout(() => {
+                $('#clipboardIcon').tooltip('hide');
+            }, 3000);
+        } catch (err) {
+            console.log('Oops, unable to copy');
+        }
+    });
+</script>
 {% endblock %}

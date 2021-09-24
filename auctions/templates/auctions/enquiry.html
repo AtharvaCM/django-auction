@@ -6,9 +6,9 @@ About | eAuction Pune
 
 {% block body %}
 
-<div class="feedback-wrapper">
+<div class="feedback-wrapper bg-img-secondary">
   <div class="container my-5">
-    <form>
+    <form id="feedbackForm">
       <div class="mb-3 text-center">
         <div class="form-group">
           <label for="validationTextarea" class="form-label text-title my-4">Feedback Request</label>
@@ -16,10 +16,60 @@ About | eAuction Pune
             required>
           </textarea>
         </div>
-        <button class="btn btn-lg btn-primary my-4" type="submit">Submit</button>
+        <button class="btn btn-lg btn-primary mb-4 mt-2" type="button" onclick="feedbackSubmit()" data-toggle="modal"
+          data-target="#modalForm">Submit</button>
       </div>
     </form>
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modalForm" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Feedback Form</h4>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p class="statusMsg"></p>
+        <form role="form">
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter your name" />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" />
+          </div>
+          <div class="form-group">
+            <label for="inputMessage">Message</label>
+            <textarea class="form-control" id="inputMessage" placeholder="Enter your message"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submitBtn" onclick="submitContactForm()">SUBMIT</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function feedbackSubmit() {
+    form = document.getElementById('feedbackForm')
+    textarea = document.getElementById('validationTextarea')
+
+    // reset the form
+    form.reset();
+
+    // display success div
+
+  }
+</script>
 {% endblock %}

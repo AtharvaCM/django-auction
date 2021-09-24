@@ -84,7 +84,8 @@
                             <a class="dropdown-item" href="{% url 'closed_listings' %}">Closed Auctions</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'terms' %}">Terms & Conditions</a>
-                            <a class="dropdown-item" href="{% url 'help_and_support' %}">Feedback Form</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#feedbackModal">Feedback
+                                Form</a>
                         </div>
                     </li>
                     {% if user.is_authenticated %}
@@ -114,6 +115,46 @@
             </div>
         </nav>
     </header>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" role="dialog" aria-labelledby="feedbackModalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto" id="feedbackModalTitle">Feedback Form</h4>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <p class="statusMsg"></p>
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="inputName" placeholder="Enter your name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMessage">Message</label>
+                            <textarea class="form-control" id="inputMessage"
+                                placeholder="Enter your message"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary submitBtn"
+                        onclick="submitContactForm()">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {% block body %}
     {% endblock %}
@@ -196,6 +237,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function submitContactForm() {
+            console.log('in func');
+            statusMsg = document.getElementsByClassName('statusMsg')[0];
+            msg = `
+            <div class="alert alert-success" role="alert">
+                Feedback Submitted!
+            </div>
+            `
+            statusMsg.innerHTML = msg;
+        }
+    </script>
 </body>
 
 </html>
