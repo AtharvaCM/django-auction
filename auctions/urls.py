@@ -2,6 +2,7 @@ from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 from .import views
 
 urlpatterns = [
@@ -9,7 +10,15 @@ urlpatterns = [
     path('login', views.login_view, name='login'),
     path('logout', views.logout_view, name='logout'),
     path('register', views.register, name='register'),
-    path('reset_password', views.reset_password, name='reset_password'),
+
+    path('reset_password', auth_views.PasswordResetView.as_view(template_name='auctions/password_reset.html'),
+         name='reset_password'),
+    path('reset_password_sent', auth_views.PasswordResetDoneView.as_view(),
+         name='password_reset_done'),
+    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(),
+         name='password_reset_confirm'),
+    path('reset_password_complete', auth_views.PasswordResetCompleteView.as_view(
+    ), name='password_reset_complete'),
 
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
     path('about', views.about, name='about'),
