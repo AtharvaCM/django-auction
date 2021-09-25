@@ -3,6 +3,9 @@
 {% block title %}Active Listing | eAuction Pune{% endblock %}
 
 {% block body %}
+
+{% include 'auctions/header.html' %}
+
 <div class="container my-4">
     <div class="back-link mb-3">
         <a href="{% url 'display_category' %}" class="text-primary">
@@ -142,6 +145,9 @@
         {% endif %}
     </div>
 </div>
+
+{% include 'auctions/footer.html' %}
+
 <script>
     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 

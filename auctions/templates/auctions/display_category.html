@@ -1,6 +1,9 @@
 {% extends 'auctions/base.html' %}
 
 {% block body %}
+
+{% include 'auctions/header.html' %}
+
 <div class="bg-img-secondary">
     <div class="container mt-4 display-wrapper" style="overflow: hidden;">
         <div class="mb-3">
@@ -47,4 +50,7 @@
         </div>
     </div>
 </div>
+
+{% include 'auctions/footer.html' %}
+
 {% endblock %}

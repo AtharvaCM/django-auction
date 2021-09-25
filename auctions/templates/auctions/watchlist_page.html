@@ -3,6 +3,9 @@
 {% block title %}Watchlist | eAuction Pune{% endblock %}
 
 {% block body %}
+
+{% include 'auctions/header.html' %}
+
 <div class="watchlist-wrapper">
     <div class="container">
         <h2 class="text-center text-title">My Watchlist </h2>
@@ -23,4 +26,7 @@
         </div>
     </div>
 </div>
+
+{% include 'auctions/footer.html' %}
+
 {% endblock %}

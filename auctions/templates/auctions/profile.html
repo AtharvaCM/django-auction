@@ -5,6 +5,9 @@ Profile | eAuction Pune
 {% endblock %}
 
 {% block body %}
+
+{% include 'auctions/header.html' %}
+
 <div class="container rounded mt-5 mb-5 profile-wrapper">
     <div class="row">
         <div class="col-md-5 left-div">
@@ -179,6 +182,9 @@ Profile | eAuction Pune
         </div>
     </div>
 </div>
+
+{% include 'auctions/footer.html' %}
+
 <script>
     function clickedEditProfile() {
         my_profile = document.getElementsByClassName('my-profile')[0]

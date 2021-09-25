@@ -6,6 +6,8 @@ About | eAuction Pune
 
 {% block body %}
 
+{% include 'auctions/header.html' %}
+
 <div class="feedback-wrapper bg-img-secondary">
   <div class="container my-5">
     <form id="feedbackForm">
@@ -59,6 +61,8 @@ About | eAuction Pune
     </div>
   </div>
 </div>
+
+{% include 'auctions/footer.html' %}
 
 <script>
   function feedbackSubmit() {
