@@ -541,9 +541,7 @@ input.empty:focus {
   text-indent: 50px;
   letter-spacing: 1px;
   line-height: 1.5;
-  font-weight: 300;
-  text-align: justify;
-  text-justify: inter-word;
+  font-weight: 200;
 }
 
 .wrapper-about h4 {
@@ -571,7 +569,7 @@ input.empty:focus {
 }
 
 .text-responsive {
-  font-size: calc(100% + 1vw + 1vh);
+  font-size: calc(100% + 0.5vw + 0.5vh);
 }
 
 /* ------------------------------------Watchlist page----------------------------------------------------- */
