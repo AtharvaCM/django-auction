@@ -24,6 +24,12 @@
     <div class="alert alert-success" role="alert">
         Congratulations <span class="bid-user">{{ listing.bid.user }}</span>, you won the Auction!
     </div>
+    <div>
+        <marquee height="30%">
+            Hey {{ listing.bid.user.first_name }}, Please contact with the owner of the listing for further process.
+            Thank You !
+        </marquee>
+    </div>
     {% endif %}
 
     {% if is_owner and not listing.is_closed%}

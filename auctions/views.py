@@ -117,6 +117,7 @@ class SearchResultsView(ListView):
         object_list = Listing.objects.filter(
             Q(title__icontains=query) | Q(category__icontains=query)
         )
+        print(object_list)
         return object_list
 
 

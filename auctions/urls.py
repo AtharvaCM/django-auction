@@ -22,7 +22,6 @@ urlpatterns = [
 
     path('search/', views.SearchResultsView.as_view(), name='search_results'),
     path('about', views.about, name='about'),
-    path('help', views.help, name='help_and_support'),
     path('terms', views.terms, name='terms'),
 
     path('profile', views.profile, name='profile'),

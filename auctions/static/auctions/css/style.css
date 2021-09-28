@@ -41,6 +41,12 @@ h6 {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+.title {
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-size: 28px;
+  margin-left: 12px;
+}
+
 .custom-navbar input {
   border-color: #8d8a8a;
 }
@@ -63,37 +69,16 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-#feedbackModal .progress-bar {
-  position: absolute;
-  height: 10px;
-  width: 0;
-  right: 0;
-  top: 50%;
-  left: 50%;
-  border-radius: 200px;
-  transform: translateY(-50%) translateX(-50%);
-  background: lighten(#2b2d2f, 15%);
+/* -----------------------------------Feedback Modal --------------------------------------- */
+.modal-content {
+  background: #dddddd;
 }
 
-#feedbackModal svg {
-  width: 30px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  left: 50%;
-  right: 0;
+.modal-title {
+  font-family: "Klee One", cursive;
 }
 
-#feedbackModal .check {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* ----------------------------------------------------------------------------------------- */
-/* register page */
+/* -----------------------------------register page --------------------------------------- */
 
 .register-wrapper,
 .login-wrapper {
@@ -154,8 +139,7 @@ input[type="number"] {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center
-    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -198,13 +182,13 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group > input,
-.form-label-group > select,
-.form-label-group > label {
+.form-label-group>input,
+.form-label-group>select,
+.form-label-group>label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group > label {
+.form-label-group>label {
   position: absolute;
   top: 0;
   left: 0;
@@ -248,7 +232,7 @@ input[type="number"] {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown) ~ label {
+.form-label-group input:not(:placeholder-shown)~label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -555,8 +539,6 @@ input.empty:focus {
 
 .wrapper-about p {
   text-indent: 50px;
-  /* font-family: "Times New Roman", Times, serif; */
-  /* font-size: 25px; */
   letter-spacing: 1px;
   line-height: 1.5;
   font-weight: 300;
@@ -731,8 +713,12 @@ input.empty:focus {
 
 /* ----------------------------------create listing--------------------------------------------------- */
 .bg-img-secondary {
-  background: url("../img/background.jpg");
+  /* background: url("../img/background.jpg");
+  background-size: cover; */
+  background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../img/main-img.jpg");
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .bg-img-secondary .text-title {
@@ -759,30 +745,26 @@ input.empty:focus {
   color: white;
 }
 
+.create-list input,
+.create-list textarea {
+  background: white;
+}
+
+/* -------------------------------------Search page---------------------------------------------------- */
+.search-wrapper {
+  min-height: calc(100vh - 252.5px);
+}
+
 /* -------------------------------------Enquiry page---------------------------------------------------- */
 
-.feedback-wrapper .container {
-  background-color: #535355;
-  border-radius: 1rem;
-}
 
-.feedback-wrapper .text-area {
-  border-color: black;
-  height: 200px !important;
-}
-
-.feedback-wrapper .text-area::placeholder {
-  font-size: 20px;
-}
 
 /* ----------------------------------------Footer------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(21, 20, 20) 40%,
-    rgb(101, 100, 100)
-  );
+  background-image: linear-gradient(to bottom right,
+      rgb(21, 20, 20) 40%,
+      rgb(101, 100, 100));
   padding-bottom: 1px;
   color: antiquewhite;
 }
