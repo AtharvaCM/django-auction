@@ -3,7 +3,13 @@ if (document.readyState == "loading") {
 } else {
   ready();
 }
+// $(window).load(function() {
+//   $(".loader").fadeOut("slow");
+// });
 
 function ready() {
   console.log("doc ready");
+  setTimeout(() => {
+    $(".loader").fadeOut("slow");
+  }, 2000);
 }

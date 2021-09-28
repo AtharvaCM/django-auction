@@ -13,6 +13,16 @@ body {
   animation: ease-in-out 1500ms;
 }
 
+.loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../img/gear_loader.gif") 50% 50% no-repeat rgb(249, 249, 249);
+}
+
 a:hover {
   color: rgb(128, 129, 255);
   text-decoration: none;
