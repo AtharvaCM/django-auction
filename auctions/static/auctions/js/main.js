@@ -9,7 +9,5 @@ if (document.readyState == "loading") {
 
 function ready() {
   console.log("doc ready");
-  setTimeout(() => {
-    $(".loader").fadeOut("slow");
-  }, 2000);
+  $(".loader").fadeOut("slow");
 }
