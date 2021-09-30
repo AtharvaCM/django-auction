@@ -49,11 +49,53 @@ h6 {
 
 .custom-navbar input {
   border-color: #8d8a8a;
+  width: auto;
+}
+
+.custom-navbar img {
+  height: 50px;
+  width: 50px;
+}
+
+input.empty {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  background-color: transparent;
+  color: black;
+}
+
+input.empty::placeholder {
+  color: rgb(142, 145, 139);
+  opacity: 1;
+  /* Firefox */
+}
+
+input.empty:focus {
+  background-color: transparent;
+  color: rgb(2, 1, 0);
+}
+
+@media (max-width: 1090px) {
+  .title {
+    font-size: 20px;
+  }
+  .custom-navbar input {
+    width: 70% !important;
+  }
+  .custom-navbar img {
+    height: 40px;
+    width: 40px;
+  }
 }
 
 @media only screen and (max-width: 570px) {
   .nav-form-btn {
     width: 100%;
+  }
+  .custom-navbar input {
+    width: 100% !important;
   }
 }
 
@@ -139,7 +181,8 @@ input[type="number"] {
 .card-signin .card-img-left {
   width: 45%;
   /* Link to your background image using in the property below! */
-  background: scroll center url("https://source.unsplash.com/WEQbe2jBg40/414x512");
+  background: scroll center
+    url("https://source.unsplash.com/WEQbe2jBg40/414x512");
   background-size: cover;
 }
 
@@ -182,13 +225,13 @@ input[type="number"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
-.form-label-group>input,
-.form-label-group>select,
-.form-label-group>label {
+.form-label-group > input,
+.form-label-group > select,
+.form-label-group > label {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
-.form-label-group>label {
+.form-label-group > label {
   position: absolute;
   top: 0;
   left: 0;
@@ -232,7 +275,7 @@ input[type="number"] {
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 
-.form-label-group input:not(:placeholder-shown)~label {
+.form-label-group input:not(:placeholder-shown) ~ label {
   padding-top: calc(var(--input-padding-y) / 3);
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
@@ -251,26 +294,6 @@ input[type="number"] {
 .w3-xlarge {
   color: green;
   margin: 0;
-}
-
-input.empty {
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  background-color: transparent;
-  color: black;
-}
-
-input.empty::placeholder {
-  color: rgb(142, 145, 139);
-  opacity: 1;
-  /* Firefox */
-}
-
-input.empty:focus {
-  background-color: transparent;
-  color: rgb(2, 1, 0);
 }
 
 .form-signin .mobile {
@@ -755,14 +778,14 @@ input.empty:focus {
 
 /* -------------------------------------Enquiry page---------------------------------------------------- */
 
-
-
 /* ----------------------------------------Footer------------------------------------------------- */
 
 .custom-footer {
-  background-image: linear-gradient(to bottom right,
-      rgb(21, 20, 20) 40%,
-      rgb(101, 100, 100));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(21, 20, 20) 40%,
+    rgb(101, 100, 100)
+  );
   padding-bottom: 1px;
   color: antiquewhite;
 }
